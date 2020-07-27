@@ -1,0 +1,3 @@
+class Attribute < ApplicationRecord
+
+end
