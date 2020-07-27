@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem 'rails-i18n', '~> 6.0.0'
+
 gem 'factory_bot_rails'
 
 gem 'devise'
