@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2020_07_27_003332) do
+ActiveRecord::Schema.define(version: 2020_07_27_005135) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -25,12 +24,21 @@ ActiveRecord::Schema.define(version: 2020_07_27_003332) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   end
-  
+
   create_table "attributes", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
 
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.string "kind"
+    t.integer "price"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
