@@ -116,8 +116,8 @@ Item.find_or_create_by(name: 'Escudo') do |item|
   item.description = 'requer teste de agilidade, absorve completamente o dano de armas pequenas, completamente o dano de armas grandes caso passe em teste de força (falha na defesa caso erre), parcialmente de armas grandes (50%)'
 end
 
-Attribute.find_or_create_by(name: 'Agilidade')
-Attribute.find_or_create_by(name: 'Carisma')
-Attribute.find_or_create_by(name: 'Conhecimento')
-Attribute.find_or_create_by(name: 'Força')
-Attribute.find_or_create_by(name: 'Vitalidade')
+Characteristic.find_or_create_by(name: 'Agilidade')
+Characteristic.find_or_create_by(name: 'Carisma')
+Characteristic.find_or_create_by(name: 'Conhecimento')
+Characteristic.find_or_create_by(name: 'Força')
+Characteristic.find_or_create_by(name: 'Vitalidade')
