@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_01_132625) do
+ActiveRecord::Schema.define(version: 2020_08_01_141824) do
 
   create_table "attributes", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,12 @@ ActiveRecord::Schema.define(version: 2020_08_01_132625) do
     t.text "skills"
     t.text "weapons"
     t.integer "mana"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "characteristics", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -44,6 +50,26 @@ ActiveRecord::Schema.define(version: 2020_08_01_132625) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sheet_attributes", force: :cascade do |t|
+    t.integer "sheet_id"
+    t.integer "attribute_id"
+    t.integer "quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["attribute_id"], name: "index_sheet_attributes_on_attribute_id"
+    t.index ["sheet_id"], name: "index_sheet_attributes_on_sheet_id"
+  end
+
+  create_table "sheet_characteristics", force: :cascade do |t|
+    t.integer "sheet_id"
+    t.integer "characteristic_id"
+    t.integer "quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["characteristic_id"], name: "index_sheet_characteristics_on_characteristic_id"
+    t.index ["sheet_id"], name: "index_sheet_characteristics_on_sheet_id"
   end
 
   create_table "sheets", force: :cascade do |t|
