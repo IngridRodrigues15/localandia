@@ -1,0 +1,26 @@
+pt-BR:
+  # header
+  hello: Olá
+  sign_in: Entrar
+  sign_out: Sair
+  search_here: Pesquise Receitas Aqui
+  # main links/buttons/forms
+  picture: Imagem
+  send: Enviar
+  search: Buscar
+  edit: Editar
+  # recipes links
+  new_recipe: Enviar Receita
+  my_recipes: Minhas Receitas
+  pendind_recipes: Receitas Pendentes
+  activate: Ativar
+  reject: Rejeitar
+  # other links
+  new_recipe_type: Enviar Tipo de Receitas
+  new_cuisine: Enviar Cozinha
+  # recipe list texts and links
+  my_lists: Minhas Listas
+  new_list: Nova Lista
+  empty_list: Esta lista ainda esta vazia
+  no_lists: Você ainda não possui nenhuma lista
+  add_to_list: Adicionar à Lista
