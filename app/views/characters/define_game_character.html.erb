@@ -1,0 +1,11 @@
+<section class ="character-game-form">
+  <%= form_for @character do |f| %>
+
+    <div class="form-group">
+      <%= f.label :game_id, "Jogo" %>
+      <%= f.collection_select(:game_id, @games, :id, :description, {}, {class: "form-control"}) %>
+    </div>
+
+    <%= f.submit "Enviar" %>
+  <% end %>
+</section>
