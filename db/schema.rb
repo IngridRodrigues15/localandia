@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_27_013821) do
+ActiveRecord::Schema.define(version: 2020_08_01_132625) do
 
   create_table "attributes", force: :cascade do |t|
     t.string "name"
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 2020_07_27_013821) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "inventories", force: :cascade do |t|
+    t.integer "sheet_id"
+    t.integer "item_id"
+    t.integer "quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_inventories_on_item_id"
+    t.index ["sheet_id"], name: "index_inventories_on_sheet_id"
+  end
+
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.string "kind"
@@ -34,6 +44,17 @@ ActiveRecord::Schema.define(version: 2020_07_27_013821) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sheets", force: :cascade do |t|
+    t.integer "rubies"
+    t.integer "life"
+    t.integer "mana"
+    t.integer "heroic_points"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "character_type_id"
+    t.index ["character_type_id"], name: "index_sheets_on_character_type_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,4 +69,5 @@ ActiveRecord::Schema.define(version: 2020_07_27_013821) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "sheets", "character_types"
 end
