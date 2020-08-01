@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_01_171716) do
+ActiveRecord::Schema.define(version: 2020_08_01_174406) do
 
   create_table "attributes", force: :cascade do |t|
     t.string "name"
@@ -29,6 +29,12 @@ ActiveRecord::Schema.define(version: 2020_08_01_171716) do
 
   create_table "characteristics", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -59,6 +65,8 @@ ActiveRecord::Schema.define(version: 2020_08_01_171716) do
     t.string "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "game_id"
+    t.index ["game_id"], name: "index_players_on_game_id"
     t.index ["sheet_id"], name: "index_players_on_sheet_id"
     t.index ["user_id"], name: "index_players_on_user_id"
   end
@@ -106,5 +114,6 @@ ActiveRecord::Schema.define(version: 2020_08_01_171716) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "players", "games"
   add_foreign_key "sheets", "character_types"
 end
