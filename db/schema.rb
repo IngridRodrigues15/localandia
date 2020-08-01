@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_01_141824) do
+ActiveRecord::Schema.define(version: 2020_08_01_171716) do
 
   create_table "attributes", force: :cascade do |t|
     t.string "name"
@@ -50,6 +50,17 @@ ActiveRecord::Schema.define(version: 2020_08_01_141824) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.integer "sheet_id"
+    t.integer "user_id"
+    t.string "nome"
+    t.string "type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["sheet_id"], name: "index_players_on_sheet_id"
+    t.index ["user_id"], name: "index_players_on_user_id"
   end
 
   create_table "sheet_attributes", force: :cascade do |t|
