@@ -1,0 +1,11 @@
+<section class ="game-form">
+  <%= form_for @game do |f| %>
+
+    <div class="form-group">
+      <%= f.label :description, "Descriçao" %>
+      <%= f.text_field :description, class: "form-control" %>
+    </div>
+
+    <%= f.submit "Enviar" %>
+  <% end %>
+</section>

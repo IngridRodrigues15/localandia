@@ -1,0 +1,11 @@
+<section class ="character-form">
+  <%= form_for @character do |f| %>
+
+    <div class="form-group">
+      <%= f.label :nome, "Nome" %>
+      <%= f.text_field :nome, class: "form-control" %>
+    </div>
+
+    <%= f.submit "Enviar" %>
+  <% end %>
+</section>
