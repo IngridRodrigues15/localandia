@@ -5,7 +5,6 @@ class CharactersController < ApplicationController
   end
 
   def create
-    byebug
     @character = Character.new(character_params)
     @character.user = current_user
     if @character.save
@@ -25,7 +24,7 @@ class CharactersController < ApplicationController
   end
 
   def update
-    
+
     @character = Character.find_by(id: params[:id])
     game = Game.find(game_params[:game_id])
     if @character.update_attributes(game: game)
