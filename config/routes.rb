@@ -3,7 +3,13 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root to: "characters#index"
-  resources :sheets, only: [:index, :new, :create]
+  resources :sheets, only: [:new, :create, :show] do
+    member do
+      get 'define_character_type'
+      get 'characteristics_form'
+      post 'characteristics'
+    end
+  end
   resources :characters, only: [:index, :new, :create, :update] do
     member do
       get 'define_game'

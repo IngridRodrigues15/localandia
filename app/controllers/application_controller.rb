@@ -4,4 +4,8 @@ class ApplicationController < ActionController::Base
   def load_master
     Master.find_by(user_id: current_user.id)
   end
+  
+  def load_character
+    Character.find_by(user_id: current_user.id)
+  end
 end
