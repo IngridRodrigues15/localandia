@@ -71,16 +71,6 @@ ActiveRecord::Schema.define(version: 2020_08_01_174406) do
     t.index ["user_id"], name: "index_players_on_user_id"
   end
 
-  create_table "sheet_attributes", force: :cascade do |t|
-    t.integer "sheet_id"
-    t.integer "attribute_id"
-    t.integer "quantity"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["attribute_id"], name: "index_sheet_attributes_on_attribute_id"
-    t.index ["sheet_id"], name: "index_sheet_attributes_on_sheet_id"
-  end
-
   create_table "sheet_characteristics", force: :cascade do |t|
     t.integer "sheet_id"
     t.integer "characteristic_id"
