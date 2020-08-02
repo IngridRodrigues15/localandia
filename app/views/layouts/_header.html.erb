@@ -1,0 +1,8 @@
+<% if user_signed_in? %>
+  <navbar class='navbar navbar-dark bg-dark'>
+    <span class='navbar-text ml-auto'><%= t(:hello) %>, <%= current_user.email %></span>
+    <%= link_to  destroy_user_session_path, method: :delete, class: 'nav-link text-secondary',data: {toggle:"tooltip", placement:"bottom"}, title: t(:sign_out) do %>
+      <i class="fa fa-sign-out-alt"></i>
+    <% end %>
+  </navbar>
+<% end %>
