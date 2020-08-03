@@ -1,0 +1,38 @@
+.login-container {
+  height: 100%;
+  position: relative;
+  min-height: 100vh;
+  background-image: url(../images/back.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  .login-form {
+    padding-top: 70px;
+    .row{
+      background-color: rgba(8,32,53,0.95);
+      padding: 30px;
+    }
+  }
+  form#new_user {
+    margin-top: 20px;
+    input{
+      background-color: rgba(255, 255, 255, 0.8);
+      border-color: #fff;
+      border-radius: 5px;
+    }
+    a {
+      color: #2990ff;
+    }
+    .field {
+      margin-top: 10px;
+    }
+    .actions {
+      margin: 15px 0;
+      input{
+        background-color: rgb(120,35,253);
+        border-color: rgb(120,35,253);
+        color:#fff;
+      }
+    }
+  }
+}

@@ -1,15 +1,83 @@
-<p><%= @sheet.rubies %></p>
-<p><%= @sheet.life %></p>
-<p><%= @sheet.mana %></p>
-<p><%= @sheet.heroic_points %></p>
+<div class="player-navbar">
+  <div class="container">
+    <div class="row sheet-info">
+      <div class="col-sm">
+        <div class="character-info d-flex justify-content-start">
+          <div class="character-icon">
+            <% if @sheet.character_type.name == "Maga" || @sheet.character_type.name == "Sacedotiza" %>
+              <i class="fas fa-hat-wizard"></i>
+            <% elsif @sheet.character_type.name == "Arqueira" %>
+              <i class="fas fa-hat-wizard"></i>
+            <% elsif @sheet.character_type.name == "Espadachim" %>
+            <% end %>
+          </div>
+          <div class="character-class">
+            <p><%= @character.nome %></p>
+            <p><%= @sheet.character_type.name %></p>
+            <div class="rubies-info d-flex justify-content-start"">
+              <i class="fas fa-gem"  data-fa-transform="rotate-45"></i><spam><%= @sheet.rubies %></spam>
+              <i class="fas fa-trophy"></i><spam><%= @sheet.heroic_points.to_i %></spam>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="bars-container">
+          <div class="info-bar">
+            <i class="fas fa-heart"></i> <div class="bar life-bar"></div> <spam><%= @sheet.life %></spam>
+          </div>
+          <div class="info-bar">
+            <i class="fas fa-mug-hot"></i> <div class="bar mana-bar"></div> <spam><%= @sheet.mana.to_i  %></spam>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<main class="container mt-5">
+  <div class="row">
+    <div class="col-4 pr-5">
+      <div class="characteristic-panel">
+        <% @sheet_characteristics.each do |sheet_characteristic| %>
+          <div class="characteristic-info">
+            <% if sheet_characteristic.characteristic.name == "Agilidade" %>
+              <i class="fas fa-running"></i>
+            <% elsif sheet_characteristic.characteristic.name  == "Carisma" %>
+              <i class="fas fa-smile-wink"></i>
+            <% elsif sheet_characteristic.characteristic.name == "Conhecimento" %>
+              <i class="fas fa-book"></i>
+            <% elsif sheet_characteristic.characteristic.name == "Força" %>
+              <i class="fas fa-dumbbell"></i>
+            <% elsif sheet_characteristic.characteristic.name == "Vitalidade" %>
+              <i class="fas fa-heartbeat"></i>
+            <% end %>
+            <spam><%= sheet_characteristic.characteristic.name %>: </spam>
+            <spam><%= sheet_characteristic.quantity %></spam>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
-<p><%= @sheet.character_type.name %></p>
-<p><%= @sheet.character_type.skills %></p>
-<p><%= @sheet.character_type.weapons %></p>
+    <div class="col-8 skills-panel">
+      <ul class="nav nav-tabs justify-content-end" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="skills-tab" data-toggle="tab" href="#skills" role="tab" aria-controls="skills" aria-selected="true">Habilidades</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="inventory-tab" data-toggle="tab" href="#inventory" role="tab" aria-controls="inventory" aria-selected="false">Inventario</a>
+        </li>
 
-
-<% @sheet_characteristics.each do |sheet_characteristic| %>
-  <p><%= sheet_characteristic.characteristic.name %></p>
-  <p><%= sheet_characteristic.quantity %></p>
-<% end %>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="skills" role="tabpanel" aria-labelledby="skills-tab">
+          <p><%= raw @sheet.character_type.skills %></p>
+          <p><%= @sheet.character_type.weapons %></p>
+        </div>
+        <div class="tab-pane fade" id="inventory" role="tabpanel" aria-labelledby="inventory-tab">
+          <p>Inventario</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
