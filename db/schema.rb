@@ -12,12 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_08_01_174406) do
 
-  create_table "attributes", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "character_types", force: :cascade do |t|
     t.string "name"
     t.text "skills"

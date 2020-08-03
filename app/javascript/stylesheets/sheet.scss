@@ -1,0 +1,140 @@
+body {
+  background-color: #f9f9f9;
+  font-family: Roboto Condensed,sans-serif;
+  color: #34313a;
+}
+
+.navbar.navbar-dark.bg-dark {
+  background-color: #432873 !important;
+  color: #fff;
+  .navbar-text {
+    color: #fff;
+  }
+  .text-secondary  {
+    color: #fff !important;
+  }
+}
+
+.player-navbar {
+  background-color: #361f5d;
+  padding: 40px 0;
+  color: #fff;
+}
+
+.sheet-info {
+  .character-info {
+      display: block;
+      .character-icon {
+        background-color: #fff;
+        border-radius: 100%;
+        height: 80px;
+        width: 80px;
+        svg.svg-inline--fa {
+            color: #d01010;
+            margin: 17px;
+            font-size: 40px;
+        }
+      }
+     .character-class {
+       margin-left: 18px;
+       p:nth-child(1) {
+         font-weight: 700;
+       }
+       p:nth-child(2) {
+         line-height: 0;
+       }
+     }
+     .rubies-info {
+       svg.svg-inline--fa {
+         margin-right: 10px;
+         font-size: 20px;
+       }
+       svg.svg-inline--fa.fa-gem {
+         color: #f24e51;
+       }
+       svg.svg-inline--fa.fa-trophy {
+         margin-left: 10px;
+         color: #ffc107;
+       }
+
+     }
+  }
+  .bars-container {
+      display: block;
+      width: 100%;
+      .bar {
+        display: inline-block;
+        height: 15px;
+        width: 200px;
+        border-radius: 2px;
+      }
+      .info-bar+.info-bar{
+        margin-top: 25px;
+      }
+      spam {
+        font-size: 14px;
+        color: #ccc;
+      }
+      .life-bar {
+        background-color: #f74e52;
+      }
+      .mana-bar {
+        background-color: #ffc107;
+      }
+      svg.svg-inline--fa {
+        font-size:20px;
+        margin-right: 5px;
+      }
+      svg.svg-inline--fa.fa-heart {
+        color: #f74e52;
+      }
+      svg.svg-inline--fa.fa-mug-hot {
+        color: #ffc107;
+      }
+   }
+}
+
+.characteristic-panel {
+  background-color: #edecee;
+  border-radius: 3px;
+  padding: 10px;
+  margin-top: 35px;
+  .characteristic-info {
+    padding: 10px;
+    spam {
+      font-size: 13px;
+    }
+    svg.svg-inline--fa {
+      font-size: 18px;
+      margin-right: 10px;
+    }
+    .fa-running {
+      color: #f24e50
+    }
+    .fa-smile-wink {
+      color: #f7c109
+    }
+    .fa-book {
+      color: #616AF5
+    }
+    .fa-dumbbell {
+      color: #60BF2A
+    }
+    .fa-heartbeat {
+      color: #f24e51
+    }
+  }
+}
+.skills-panel {
+  .tab-content{
+    padding: 10px;
+    font-size: 15px;
+  }
+  .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #432873;
+    background-color: #f9f9f9;
+  }
+  a {
+   color: #6515e6;
+  }
+}

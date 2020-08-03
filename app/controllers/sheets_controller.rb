@@ -12,9 +12,7 @@ class SheetsController < ApplicationController
   def create
     @sheet = Sheet.new(sheet_params)
     @sheet.rubies = 350
-    @sheet.life = 25
 
-    # TO DO adicionar definicao de mana
     if @sheet.save && link_sheet_to_caracter(@sheet)
       define_path
     else
@@ -24,6 +22,7 @@ class SheetsController < ApplicationController
   end
 
   def show
+    @character = load_character
     @sheet = Sheet.find_by(id: params[:id])
     @sheet_characteristics = @sheet.sheet_characteristics.group(:characteristic_id)
   end
