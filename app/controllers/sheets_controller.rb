@@ -11,7 +11,7 @@ class SheetsController < ApplicationController
 
   def create
     @sheet = Sheet.new(sheet_params)
-    @sheet.rubies = 350
+    @sheet.rubies = 150
 
     if @sheet.save && link_sheet_to_caracter(@sheet)
       define_path
@@ -60,6 +60,8 @@ class SheetsController < ApplicationController
       render 'define_character_type_sheet'
     elsif @sheet.sheet_characteristics.empty?
       redirect_to characteristics_form_sheet_path(@sheet.id)
+    else
+      redirect_to sheet_path(@sheet.id)
     end
   end
 

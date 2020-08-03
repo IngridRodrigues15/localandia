@@ -8,7 +8,7 @@
 
 CharacterType.find_or_create_by(name: 'Arqueira') do |type|
   type.skills = 'Chuva de Flechas: Não causa dano, mas afasta um inimigo'
-  type.weapons = 'Arcos e Aljava'
+  type.weapons = '<b>Arco de bambu</b>: causa 1d6 de dano<br><b>Aljava</b>: milagrosamente, carrega uma quantidade infinita de flechas'
   type.mana = 1
 end
 
