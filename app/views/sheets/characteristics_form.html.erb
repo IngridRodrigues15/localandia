@@ -1,0 +1,13 @@
+<%= form_for @sheet, url: characteristics_sheet_path(@sheet), method: :post do |f| %>
+  <% @characteristics.each do |characteristic| %>
+
+    <%= fields_for :"#{characteristic.name}", @sheet.sheet_characteristics.new do |char_field| %>
+      <div class="form-group">
+        <%= char_field.label :quantity, characteristic.name %>
+        <%= char_field.text_field :quantity, class: "form-control" %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <%= f.submit "Enviar" %>
+<% end %>

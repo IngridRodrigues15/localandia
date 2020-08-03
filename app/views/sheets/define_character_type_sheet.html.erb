@@ -1,0 +1,18 @@
+<section class ="sheet-form">
+  <%= form_for @sheet do |f| %>
+
+    <div class="form-group">
+      <%= f.label :character_type_id, "Classe do Personagem" %>
+      <%= f.collection_select(:character_type_id, @caracter_types, :id, :name, {}, {class: "form-control"}) %>
+    </div>
+
+    <% @caracter_types.each do |character_type| %>
+      <p> <%= character_type.name %></p>
+      <p> <%= character_type.skills %></p>
+      <p> <%= character_type.weapons %></p>
+      <p> <%= character_type.mana %></p>
+    <% end %>
+
+    <%= f.submit "Enviar" %>
+  <% end %>
+</section>

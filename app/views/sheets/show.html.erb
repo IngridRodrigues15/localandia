@@ -1,0 +1,15 @@
+<p><%= @sheet.rubies %></p>
+<p><%= @sheet.life %></p>
+<p><%= @sheet.mana %></p>
+<p><%= @sheet.heroic_points %></p>
+
+
+<p><%= @sheet.character_type.name %></p>
+<p><%= @sheet.character_type.skills %></p>
+<p><%= @sheet.character_type.weapons %></p>
+
+
+<% @sheet_characteristics.each do |sheet_characteristic| %>
+  <p><%= sheet_characteristic.characteristic.name %></p>
+  <p><%= sheet_characteristic.quantity %></p>
+<% end %>

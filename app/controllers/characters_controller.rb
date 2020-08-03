@@ -59,8 +59,4 @@ class CharactersController < ApplicationController
   def game_params
     params.require(:character).permit(:game_id)
   end
-
-  def load_character
-    Character.find_by(user_id: current_user.id)
-  end
 end
