@@ -23,10 +23,16 @@
     a {
       color: #2990ff;
     }
-    .actions input{
-      background-color: rgb(120,35,253);
-      border-color: rgb(120,35,253);
-      color:#fff;
+    .field {
+      margin-top: 10px;
+    }
+    .actions {
+      margin: 15px 0;
+      input{
+        background-color: rgb(120,35,253);
+        border-color: rgb(120,35,253);
+        color:#fff;
+      }
     }
   }
 }
