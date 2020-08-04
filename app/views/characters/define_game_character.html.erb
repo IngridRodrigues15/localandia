@@ -1,11 +1,33 @@
 <section class ="character-game-form">
-  <%= form_for @character do |f| %>
-
-    <div class="form-group">
-      <%= f.label :game_id, "Jogo" %>
-      <%= f.collection_select(:game_id, @games, :id, :description, {}, {class: "form-control"}) %>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <h2>Em qual sala você está ?</h2>
+      </div>
     </div>
 
-    <%= f.submit "Enviar" %>
-  <% end %>
+    <%= form_for @character do |f| %>
+      <div class="row">
+        <% @games.each do |game| %>
+          <div class="col-sm">
+            <div class="card">
+              <div class="card-body">
+                <p class="card-text">
+                  <%= f.radio_button :game_id, game.id %>
+                  <%= game.description %>
+                </p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <%= f.submit "Enviar" %>
+        </div>
+      </div>
+    <% end %>
+
+
+  </div>
 </section>
