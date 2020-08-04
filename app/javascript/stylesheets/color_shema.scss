@@ -5,3 +5,8 @@ $color-background-light-grey: #f9f9f9;
 .light-grey {
   background-color: $color-background-light-grey;
 }
+
+.form-control:focus {
+  border-color: #432873;
+  box-shadow: 0px 0px 0px 0.2rem rgba(161,75,239,0.2);
+}

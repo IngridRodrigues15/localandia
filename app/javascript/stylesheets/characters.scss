@@ -1,0 +1,19 @@
+.name-container {
+  height: 100%;
+  position: relative;
+  min-height: 100vh;
+
+  .character-form {
+    margin-top: 100px;
+    input[type="submit"] {
+      background-color: #432873;
+      color: #fff;
+      border-color: #ae00ff;
+      padding: 5px 10px;
+    }
+    input[type="submit" i] {
+      background-color: #432873;
+      border-color: #ae00ff;
+    }
+  }
+}
