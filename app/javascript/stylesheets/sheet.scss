@@ -29,11 +29,18 @@ body {
         border-radius: 100%;
         height: 80px;
         width: 80px;
-        img {
+        svg {
             color: #d01010;
+            fill: currentColor;
             margin: 17px;
-            width: 40px;
+            width: 43px;
+            height: 43px;
         }
+       .priest-image svg {
+         width: 50px;
+         height: 50px;
+         margin: 9px 17px;
+       }
       }
      .character-class {
        margin-left: 18px;
