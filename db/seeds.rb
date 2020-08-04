@@ -7,30 +7,30 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 CharacterType.find_or_create_by(name: 'Arqueira') do |type|
-  type.skills = 'Chuva de Flechas: Não causa dano, mas afasta um inimigo'
+  type.skills = '<b>Chuva de Flechas</b>: Não causa dano, mas afasta um inimigo'
   type.weapons = '<b>Arco de bambu</b>: causa 1d6 de dano<br><b>Aljava</b>: milagrosamente, carrega uma quantidade infinita de flechas'
   type.mana = 1
 end
 
 CharacterType.find_or_create_by(name: 'Espadachim') do |type|
-  type.skills = ' Golpe Fulminante: Causa dano normalmente e atordoa o inimigo (inimigos atordoados não atacam por um turno) caso passe em um teste de força, caso contrário causa dano parcialmente (50%)'
-  type.weapons = 'Espadas'
+  type.skills = '<b>Golpe Fulminante</b>: Causa dano normalmente e atordoa o inimigo (inimigos atordoados não atacam por um turno) caso passe em um teste de força, caso contrário causa dano parcialmente (50%)'
+  type.weapons = '<b>Espadas</b>'
   type.mana = 2
 end
 
 CharacterType.find_or_create_by(name: 'Maga') do |type|
-  type.skills = 'Upstream: Uma barreira de água levanta-se do chão. Pode ser atravessada por um teste difícil de força apenas. Custa 2 mana.
-Bola de Fogo: Uma poderosa magia clássica e estilosa. Alguns magos chamam de Hadduken, Kamehameha ou Leigan, mas no final são todas bolas de fogo. Demora duas ações. Custa 2 mana e causa 2d20 de dano.
-Meteorito: Literalmente summona um meteorito, direto do espaço! Derrota instantaneamente qualquer adversário. Demora um dia inteiro. Requer mana da personagem completo e custa ele inteiro'
-  type.weapons = 'Cajado de duas mãos: causa 1d4 de dano'
+  type.skills = '<b>Upstream</b>: Uma barreira de água levanta-se do chão. Pode ser atravessada por um teste difícil de força apenas. Custa 2 mana.<br>
+<b>Bola de Fogo</b>: Uma poderosa magia clássica e estilosa. Alguns magos chamam de Hadduken, Kamehameha ou Leigan, mas no final são todas bolas de fogo. Demora duas ações. Custa 2 mana e causa 2d20 de dano.<br>
+<b>Meteorito</b>: Literalmente summona um meteorito, direto do espaço! Derrota instantaneamente qualquer adversário. Demora um dia inteiro. Requer mana da personagem completo e custa ele inteiro'
+  type.weapons = "<b>Cajado de duas mãos</b>: causa 1d4 de dano"
   type.mana = 3
 end
 
-CharacterType.find_or_create_by(name: 'Maga') do |type|
-  type.skills = 'Refinamento: Uma barreira circular que protege o time inteiro (caso estejam dentro do círculo). Todo dano sofrido é parcialmente diminuído (25%). Custa 5 (cinco) mana
-Planejamento: Levanta a moral do time. Todos os ataques aliados recebem +1. Custa 1 (um) mana
-O Descer da Phoenix: Revive um personagem e restaura toda a sua vida. Demora 3 ações. Requer mana da personagem completo e custa ele inteiro'
-  type.weapons = ''
+CharacterType.find_or_create_by(name: 'Sacerdotisa') do |type|
+  type.skills = '<b>Refinamento</b>: Uma barreira circular que protege o time inteiro (caso estejam dentro do círculo). Todo dano sofrido é parcialmente diminuído (25%). Custa 5 (cinco) mana <br>
+<b>Planejamento</b>: Levanta a moral do time. Todos os ataques aliados recebem +1. Custa 1 (um) mana<br>
+<b>O Descer da Phoenix</b>: Revive um personagem e restaura toda a sua vida. Demora 3 ações. Requer mana da personagem completo e custa ele inteiro'
+  type.weapons = "<b>Cajado de duas mãos</b>: causa 1d4 de dano"
   type.mana = 4
 end
 

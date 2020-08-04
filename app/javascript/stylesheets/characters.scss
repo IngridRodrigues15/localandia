@@ -18,15 +18,13 @@
   }
 }
 
-.character-game-form {
+
+
+.character-game-form,
+.character-choice-form {
   margin-top: 100px;
   .col-sm {
     margin-bottom: 50px;
-  }
-  .card {
-    .card-text {
-      text-transform: capitalize;
-    }
   }
   h2 {
     color: #432873;
@@ -41,5 +39,45 @@
   input[type="submit" i] {
     background-color: #432873;
     border-color: #ae00ff;
+  }
+}
+
+.character-game-form {
+  .card {
+    .card-text {
+      text-transform: capitalize;
+    }
+  }
+}
+
+.character-choice-form {
+  .card {
+    min-height: 190px;
+    margin-bottom: 30px;
+    min-height: 180px;
+    p.card-text {
+      font-size: 14px;
+    }
+  }
+  .row {
+    .col-md-6:last-child .card {
+      min-height: 282px;
+    }
+  }
+  .card-title {
+    font-weight: 700;
+    font-size: 17px;
+    display: inline-block;
+  }
+  .class-image {
+    color: #d01010;
+    display: inline-block;
+    float: right;
+    svg {
+      width: 40px;
+      height: 40px;
+      color: #d01010;
+      fill: currentColor;
+    }
   }
 }
