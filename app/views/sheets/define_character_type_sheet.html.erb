@@ -1,18 +1,45 @@
-<section class ="sheet-form">
-  <%= form_for @sheet do |f| %>
+<section class ="character-choice-form">
+  <div class="container">
 
-    <div class="form-group">
-      <%= f.label :character_type_id, "Classe do Personagem" %>
-      <%= f.collection_select(:character_type_id, @caracter_types, :id, :name, {}, {class: "form-control"}) %>
+    <div class="row">
+      <div class="col-sm">
+        <h2>Qual vai ser sua classe ?</h2>
+      </div>
     </div>
 
-    <% @caracter_types.each do |character_type| %>
-      <p> <%= character_type.name %></p>
-      <p> <%= character_type.skills %></p>
-      <p> <%= character_type.weapons %></p>
-      <p> <%= character_type.mana %></p>
-    <% end %>
+    <%= form_for @sheet do |f| %>
+      <div class="row">
+        <% @caracter_types.each do |character_type| %>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <%= f.radio_button :character_type_id, character_type.id %>
 
-    <%= f.submit "Enviar" %>
-  <% end %>
+                <% if character_type.name == "Maga"  %>
+                  <div class="wizard-image class-image"><%= svg_icon 'wizard' %></div>
+                <% elsif character_type.name == "Sacerdotisa" %>
+                   <div class="priest-image class-image"><%= svg_icon 'magic-book' %></div>
+                <% elsif character_type.name == "Arqueira" %>
+                  <div class="archer-image class-image"><%= svg_icon 'bow' %></div>
+                <% elsif character_type.name == "Espadachim" %>
+                <div class="swordsman-image class-image"><%= svg_icon 'sword' %></div>
+                <% end %>
+
+                <p class="card-title"> <%= character_type.name %></p>
+                <p class="card-text"> <%= raw character_type.skills %></p>
+                <p class="card-text"> <%= raw character_type.weapons %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="row">
+        <div class="col-sm">
+          <%= f.submit "Enviar" %>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
 </section>

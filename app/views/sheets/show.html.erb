@@ -4,11 +4,14 @@
       <div class="col-sm">
         <div class="character-info d-flex justify-content-start">
           <div class="character-icon">
-            <% if @sheet.character_type.name == "Maga" || @sheet.character_type.name == "Sacedotiza" %>
-              <i class="fas fa-hat-wizard"></i>
+            <% if @sheet.character_type.name == "Maga"  %>
+              <div class="wizard-image class-image"><%= svg_icon 'wizard' %></div>
+            <% elsif @sheet.character_type.name == "Sacerdotisa" %>
+               <div class="priest-image class-image"><%= svg_icon 'magic-book' %></div>
             <% elsif @sheet.character_type.name == "Arqueira" %>
-              <i class="fas fa-hat-wizard"></i>
+              <div class="archer-image class-image"><%= svg_icon 'bow' %></div>
             <% elsif @sheet.character_type.name == "Espadachim" %>
+            <div class="swordsman-image class-image"><%= svg_icon 'sword' %></div>
             <% end %>
           </div>
           <div class="character-class">
@@ -72,7 +75,7 @@
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="skills" role="tabpanel" aria-labelledby="skills-tab">
           <p><%= raw @sheet.character_type.skills %></p>
-          <p><%= @sheet.character_type.weapons %></p>
+          <p><%= raw @sheet.character_type.weapons %></p>
         </div>
         <div class="tab-pane fade" id="inventory" role="tabpanel" aria-labelledby="inventory-tab">
           <p>Inventario</p>
