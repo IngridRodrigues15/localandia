@@ -3,8 +3,14 @@
     <div class="col-sm">
       <span class="badge badge-secondary">Mestre</span>
         <h5>Todas as jogadoras da sala </h5>
-        <% @characters.each do |character| %>
-          <div class="character-info d-flex justify-content-start">
+      </div>
+  </div>
+  <div class="row">
+    <% @characters.each do |character| %>
+      <div class="col-md-6 character-info">
+        <div class="card">
+          <div class="card-body">
+
             <div class="character-icon">
               <% if character.sheet.character_type.name == "Maga"  %>
                 <div class="wizard-image class-image"><%= svg_icon 'wizard' %></div>
@@ -17,33 +23,62 @@
               <% end %>
             </div>
             <div class="character-class">
-              <p><%= character.nome %></p>
-              <p><%= character.sheet.character_type.name %></p>
-              <div class="rubies-info d-flex justify-content-start"">
-                <i class="fas fa-gem"  data-fa-transform="rotate-45"></i><spam><%= character.sheet.rubies %></spam>
-                <i class="fas fa-trophy"></i><spam><%= character.sheet.heroic_points.to_i %></spam>
-              </div>
+              <p class="card-title"><%= character.nome %></p>
+              <p class="card-subtitle"><%= character.sheet.character_type.name %></p>
             </div>
-            <div class="r">
-              <i class="fas fa-heart"></i> <spam><%= character.sheet.life %></spam>
-              <i class="fas fa-mug-hot"></i> <spam><%= character.sheet.mana.to_i  %></spam>
+            <div class="changeable-attributes">
+                <div class="changeable-item">
+                  <i class="fas fa-gem"  data-fa-transform="rotate-45"></i>
+                  <%= number_field_tag 'quantity', character.sheet.rubies %>
+                </div>
+                <div class="changeable-item">
+                    <i class="fas fa-trophy"></i><spam>
+                    <%= number_field_tag 'quantity', character.sheet.heroic_points.to_i %>
+                </div>
+                <div class="changeable-item">
+                  <i class="fas fa-heart"></i>
+                  <%= number_field_tag 'quantity', character.sheet.life %>
+                </div>
+                <div class="changeable-item">
+                  <i class="fas fa-mug-hot"></i>
+                  <%= number_field_tag 'quantity', character.sheet.mana.to_i %>
+                </div>
             </div>
-            <% character.sheet.sheet_characteristics.group(:characteristic_id).each do |sheet_characteristic| %>
-              <spam><%= sheet_characteristic.characteristic.name %>: </spam>
-              <spam><%= sheet_characteristic.quantity %></spam>
-            <% end %>
+            <div class="player-characteristics">
+              <p class="characteristics-title">Atributos:</p>
+              <% character.sheet.sheet_characteristics.group(:characteristic_id).each do |sheet_characteristic| %>
+                <spam><%= sheet_characteristic.characteristic.name %>:  <%= sheet_characteristic.quantity %></spam>
+              <% end %>
+            </div>
           </div>
-        <% end %>
+        </div>
       </div>
+    <% end %>
   </div>
+
   <div class="row">
     <div class="col-sm">
-      <h5>Todas as items da sala </h5>
-        <% @itens.each do |item| %>
-          <p> <%= item.kind %></p>
-          <p><%=  item.price %></p>
-          <p><%= item.description%></p>
-        <% end %>
+      <h5>Todos os items </h5>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Descrição</th>
+          </tr>
+        </thead>
+         <tbody>
+          <% @itens.each do |item| %>
+            <tr>
+              <td><%= item.name %></td>
+              <td><%= item.kind %></td>
+              <td><%= item.price %></td>
+              <td><%= item.description %></td>
+            </tr>
+          <% end %>
+         </tbody>
+       </table>
     </div>
   </div>
 </div>
