@@ -13,7 +13,7 @@ class SheetsController < ApplicationController
     @sheet = Sheet.new(sheet_params)
     @sheet.rubies = 150
 
-    if @sheet.save && link_sheet_to_caracter(@sheet)
+    if @sheet.save && link_sheet_to_caracter(@sheet) && initial_itens(@sheet)
       define_path
     else
       set_caracter_types
@@ -73,6 +73,13 @@ class SheetsController < ApplicationController
     character = load_character
     character.sheet = sheet
     character.save
+  end
+
+  def initial_itens(sheet)
+    itens = Item.where(kind: "Inicial")
+    itens.each do |item|
+      sheet.inventories.create(item: item, quantity:1)
+    end
   end
 
   def sheet_params

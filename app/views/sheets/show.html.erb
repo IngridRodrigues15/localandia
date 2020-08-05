@@ -78,7 +78,24 @@
           <p><%= raw @sheet.character_type.weapons %></p>
         </div>
         <div class="tab-pane fade" id="inventory" role="tabpanel" aria-labelledby="inventory-tab">
-          <p>Inventario</p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Quantidade</th>
+              </tr>
+            </thead>
+             <tbody>
+              <% @sheet.inventories.each do |inventory| %>
+                <tr>
+                  <td><%= inventory.item.name %></td>
+                  <td><%= inventory.item.description %></td>
+                  <td><%= inventory.quantity %></td>
+                </tr>
+              <% end %>
+             </tbody>
+           </table>
         </div>
       </div>
     </div>
