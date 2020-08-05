@@ -81,3 +81,82 @@
     }
   }
 }
+
+.characteristics-form {
+  margin-top: 50px;
+  h2 {
+    color: #432873;
+    font-size: 23px;
+    margin-bottom: 50px;
+  }
+  p {
+    margin-bottom: 0;
+  }
+  input[type="submit"] {
+    background-color: #432873;
+    color: #fff;
+    border-color: #ae00ff;
+    padding: 5px 10px;
+    margin-bottom: 30px;
+  }
+  input[type="submit" i] {
+    background-color: #432873;
+    border-color: #ae00ff;
+  }
+  input[type="submit"]:disabled {
+    background-color: #2b2a2b82;
+  }
+  .card {
+    min-height: 190px;
+    margin-bottom: 30px;
+    min-height: 180px;
+    p.card-text {
+      font-size: 14px;
+    }
+    label {
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .progress {
+      width:75%;
+      display: inline-flex;
+      border-radius: 5px 0 0 5px;
+      height: 25px;
+    }
+    .progress-bar {
+      background-color: #432b73;
+      width: 11%;
+    }
+    .form-control {
+      width:20%;
+      display: inline-flex;
+      position: absolute;
+      height: 27px;
+      border-radius: 0 5px 5px 0px;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  }
+  .characteristics-tips {
+    .card {
+      background-color: #432873;
+      color: #fff;
+    }
+    .title-tips {
+      display: inline-block;
+      font-size: 17px;
+      margin-bottom: 14px;
+    }
+    .total-points-number {
+      margin: 0 5px;
+      display: inline-block;
+      font-weight: 700;
+    }
+    ul {
+      margin-left: 0;
+      padding-left: 16px;
+    }
+  }
+}

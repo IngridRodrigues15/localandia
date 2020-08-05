@@ -29,8 +29,8 @@ class SheetsController < ApplicationController
 
   def characteristics_form
     set_characteristic
-    character = load_character
-    @sheet = character.sheet
+    @character = load_character
+    @sheet = @character.sheet
     @sheet_characteristic = @sheet.sheet_characteristics.new
   end
 
