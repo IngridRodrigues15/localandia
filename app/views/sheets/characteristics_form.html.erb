@@ -1,13 +1,90 @@
-<%= form_for @sheet, url: characteristics_sheet_path(@sheet), method: :post do |f| %>
-  <% @characteristics.each do |characteristic| %>
-
-    <%= fields_for :"#{characteristic.name}", @sheet.sheet_characteristics.new do |char_field| %>
-      <div class="form-group">
-        <%= char_field.label :quantity, characteristic.name %>
-        <%= char_field.text_field :quantity, class: "form-control" %>
+<div class="player-navbar">
+  <div class="container">
+    <div class="row sheet-info">
+      <div class="col-sm">
+        <div class="character-info d-flex justify-content-start">
+          <div class="character-icon">
+            <% if @sheet.character_type.name == "Maga"  %>
+              <div class="wizard-image class-image"><%= svg_icon 'wizard' %></div>
+            <% elsif @sheet.character_type.name == "Sacerdotisa" %>
+               <div class="priest-image class-image"><%= svg_icon 'magic-book' %></div>
+            <% elsif @sheet.character_type.name == "Arqueira" %>
+              <div class="archer-image class-image"><%= svg_icon 'bow' %></div>
+            <% elsif @sheet.character_type.name == "Espadachim" %>
+            <div class="swordsman-image class-image"><%= svg_icon 'sword' %></div>
+            <% end %>
+          </div>
+          <div class="character-class">
+            <p><%= @character.nome %></p>
+            <p><%= @sheet.character_type.name %></p>
+            <div class="rubies-info d-flex justify-content-start"">
+              <i class="fas fa-gem"  data-fa-transform="rotate-45"></i><spam><%= @sheet.rubies %></spam>
+              <i class="fas fa-trophy"></i><spam><%= @sheet.heroic_points.to_i %></spam>
+            </div>
+          </div>
+        </div>
       </div>
-    <% end %>
-  <% end %>
+    </div>
+  </div>
+</div>
 
-  <%= f.submit "Enviar" %>
-<% end %>
+<div class="container characteristics-form"">
+  <%= form_for @sheet, url: characteristics_sheet_path(@sheet), method: :post do |f| %>
+    <div class="row">
+      <div class="col-sm">
+        <h2>Distribua seus pontos </h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 characteristics-tips">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Instruções</h5>
+            <p class="title title-tips">Você tem <spam class="total-points-number">25</spam> pontos para distribuir</p>
+            <ul>
+              <li>Leve em consideração sua classe para distribuir melhor os pontos</li>
+              <li>Em cada aributo, você pode colocar no maximo 9 pontos</li>
+              <li>Em cada aributo, você pode colocar no minimo 1 ponto</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <% @characteristics.each do |characteristic| %>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body bg-light">
+            <%= fields_for :"#{characteristic.name}", @sheet.sheet_characteristics.new do |char_field| %>
+                <%= char_field.label :quantity, characteristic.name, class: "title" %>
+                <div class="form-group">
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                <%= char_field.number_field :quantity, min:1, max: 9, value: 1, class: "form-control" %>
+                <div class="text">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                </div>
+              </div>
+            <% end %>
+        </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <%= f.submit "Enviar" %>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
+<!-- <div class="col-md-4">
+  <ul><p>Dicas:<p>
+    <li>Leve em consideração sua classe para distribuir melhor os pontos</li>
+    <li>Em cada aributo, você pode colocar no maximo 9 pontos</li>
+    <li>Em cada aributo, você pode colocar no minimo 1 ponto</li>
+  </ul>
+</div> -->
