@@ -1,11 +1,16 @@
-<section class ="master-form">
-  <%= form_for @master do |f| %>
+<div class="container master-form">
+  <div class="row">
+    <div class="col-sm">
+      <span class="badge badge-secondary">Mestre</span>
+      <%= form_for @master do |f| %>
 
-    <div class="form-group">
-      <%= f.label :nome, "Nome" %>
-      <%= f.text_field :nome, class: "form-control" %>
+        <div class="form-group">
+          <%= f.label :nome, "Qual o seu nome?" %>
+          <%= f.text_field :nome, class: "form-control" %>
+        </div>
+
+        <%= f.submit "Enviar" %>
+      <% end %>
     </div>
-
-    <%= f.submit "Enviar" %>
-  <% end %>
-</section>
+  </div>
+</div>

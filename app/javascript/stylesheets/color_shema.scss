@@ -15,3 +15,44 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
    opacity: 1;
 }
+
+.badge-secondary {
+  color: #fff;
+  background-color: #432b73;
+}
+
+input[type="submit"] {
+  background-color: #432873;
+  color: #fff;
+  border-color: #ae00ff;
+}
+input[type="submit" i] {
+  background-color: #432873;
+  border-color: #ae00ff;
+}
+input[type="submit"]:disabled {
+  background-color: #2b2a2b82;
+}
+
+body {
+  background-color: #f9f9f9;
+  font-family: Roboto Condensed,sans-serif;
+  color: #34313a;
+}
+
+.navbar.navbar-dark.bg-dark {
+  background-color: #432873 !important;
+  color: #fff;
+  .navbar-text {
+    color: #fff;
+  }
+  .text-secondary  {
+    color: #fff !important;
+  }
+}
+
+.player-navbar {
+  background-color: #361f5d;
+  padding: 40px 0;
+  color: #fff;
+}
