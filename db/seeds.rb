@@ -116,8 +116,19 @@ Item.find_or_create_by(name: 'Escudo') do |item|
   item.description = 'requer teste de agilidade, absorve completamente o dano de armas pequenas, completamente o dano de armas grandes caso passe em teste de força (falha na defesa caso erre), parcialmente de armas grandes (50%)'
 end
 
-Characteristic.find_or_create_by(name: 'Agilidade')
-Characteristic.find_or_create_by(name: 'Carisma')
-Characteristic.find_or_create_by(name: 'Conhecimento')
-Characteristic.find_or_create_by(name: 'Força')
-Characteristic.find_or_create_by(name: 'Vitalidade')
+
+Characteristic.find_or_create_by(name: 'Agilidade') do |characteristic|
+  characteristic.description = "Essa habilidade representa o quão rapido e ágil você vai ser durante os combates"
+end
+Characteristic.find_or_create_by(name: 'Carisma') do |characteristic|
+  characteristic.description = "Essa habilidade é muito util para barganhar, conseguir informações etc."
+end
+Characteristic.find_or_create_by(name: 'Conhecimento') do |characteristic|
+  characteristic.description = "Essa habilidade é muito utilizada por magas e sacerdotisas nos feitiços"
+end
+Characteristic.find_or_create_by(name: 'Força') do |characteristic|
+  characteristic.description = "Essa habilidade é util para combates e também para carregar armas pesadas"
+end
+Characteristic.find_or_create_by(name: 'Vitalidade') do |characteristic|
+  characteristic.description = "Essa habilidade representa a quantidade de vida que você terá durante o jogo"
+end
