@@ -1,1 +1,84 @@
-<p>Todas as fichas </p>
+<div class="container master-index">
+  <div class="row">
+    <div class="col-sm">
+      <span class="badge badge-secondary">Mestre</span>
+        <h5>Todas as jogadoras da sala </h5>
+      </div>
+  </div>
+  <div class="row">
+    <% @characters.each do |character| %>
+      <div class="col-md-6 character-info">
+        <div class="card">
+          <div class="card-body">
+
+            <div class="character-icon">
+              <% if character.sheet.character_type.name == "Maga"  %>
+                <div class="wizard-image class-image"><%= svg_icon 'wizard' %></div>
+              <% elsif character.sheet.character_type.name == "Sacerdotisa" %>
+                 <div class="priest-image class-image"><%= svg_icon 'magic-book' %></div>
+              <% elsif character.sheet.character_type.name == "Arqueira" %>
+                <div class="archer-image class-image"><%= svg_icon 'bow' %></div>
+              <% elsif character.sheet.character_type.name == "Espadachim" %>
+              <div class="swordsman-image class-image"><%= svg_icon 'sword' %></div>
+              <% end %>
+            </div>
+            <div class="character-class">
+              <p class="card-title"><%= character.nome %></p>
+              <p class="card-subtitle"><%= character.sheet.character_type.name %></p>
+            </div>
+            <div class="changeable-attributes">
+                <div class="changeable-item">
+                  <i class="fas fa-gem"  data-fa-transform="rotate-45"></i>
+                  <%= number_field_tag 'quantity', character.sheet.rubies %>
+                </div>
+                <div class="changeable-item">
+                    <i class="fas fa-trophy"></i><spam>
+                    <%= number_field_tag 'quantity', character.sheet.heroic_points.to_i %>
+                </div>
+                <div class="changeable-item">
+                  <i class="fas fa-heart"></i>
+                  <%= number_field_tag 'quantity', character.sheet.life %>
+                </div>
+                <div class="changeable-item">
+                  <i class="fas fa-mug-hot"></i>
+                  <%= number_field_tag 'quantity', character.sheet.mana.to_i %>
+                </div>
+            </div>
+            <div class="player-characteristics">
+              <p class="characteristics-title">Atributos:</p>
+              <% character.sheet.sheet_characteristics.group(:characteristic_id).each do |sheet_characteristic| %>
+                <spam><%= sheet_characteristic.characteristic.name %>:  <%= sheet_characteristic.quantity %></spam>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <h5>Todos os items </h5>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Descrição</th>
+          </tr>
+        </thead>
+         <tbody>
+          <% @itens.each do |item| %>
+            <tr>
+              <td><%= item.name %></td>
+              <td><%= item.kind %></td>
+              <td><%= item.price %></td>
+              <td><%= item.description %></td>
+            </tr>
+          <% end %>
+         </tbody>
+       </table>
+    </div>
+  </div>
+</div>

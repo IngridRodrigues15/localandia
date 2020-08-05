@@ -1,3 +1,4 @@
+.master-index,
 .master-form {
   margin-top: 100px;
   height: 100%;
@@ -6,5 +7,62 @@
   label {
     font-size: 18px;
     margin: 10px 0;
+  }
+}
+
+.master-index {
+  .character-info {
+    margin: 30px 0;
+  }
+  .card-title {
+    font-weight: 700;
+    font-size: 17px;
+    display: inline-block;
+  }
+  .card-subtitle {
+    font-size: 14px;
+    color: #505050;
+  }
+  .character-icon {
+    height: 80px;
+    width: 80px;
+    display: inline-block;
+    float: right;
+    svg {
+        color: #d01010;
+        fill: currentColor;
+        margin: 17px;
+        width: 43px;
+        height: 43px;
+    }
+  }
+  .changeable-attributes {
+    margin: 10px 0px 10px -10px;
+    .changeable-item {
+      display: inline-block;
+      margin-left: 5px;
+    }
+    spam {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+    svg {
+      margin-left: 5px;
+      color: #d01010;
+      fill: currentColor;
+    }
+    input#quantity {
+      width: 56px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  }
+  .player-characteristics {
+    font-size: 14px;
+    .characteristics-title {
+      font-weight: 700;
+      font-size: 15px;
+      display: block;
+    }
   }
 }

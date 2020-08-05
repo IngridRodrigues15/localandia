@@ -118,17 +118,17 @@ end
 
 
 Characteristic.find_or_create_by(name: 'Agilidade') do |characteristic|
-  characteristic.description = "Essa habilidade representa o quão rapido e ágil você vai ser durante os combates"
+  characteristic.description = "Personagens ágeis são muito rápidas e perspicazes. São sempre cheias de artimanhas! Conseguem atacar duas vezes em batalhas, ver detalhes que mais ninguém vê, desviar de ataques e escalar qualquer coisa."
 end
 Characteristic.find_or_create_by(name: 'Carisma') do |characteristic|
-  characteristic.description = "Essa habilidade é muito util para barganhar, conseguir informações etc."
+  characteristic.description = "Personagens carismáticas são as melhores para se ter por perto! São comunicativas e bem articuladas. Costumam ser levadas a sério, são convincentes, conseguem informações extras e barganhas incríveis."
 end
 Characteristic.find_or_create_by(name: 'Conhecimento') do |characteristic|
-  characteristic.description = "Essa habilidade é muito utilizada por magas e sacerdotisas nos feitiços"
+  characteristic.description = "Personagens de vasto conhecimento são sábias e inteligentes. São confiáveis e essenciais para qualquer aventura. Costumam saber o que/como fazer, lembrar de informações importantes, ganhar discussões e usar várias magias."
 end
 Characteristic.find_or_create_by(name: 'Força') do |characteristic|
-  characteristic.description = "Essa habilidade é util para combates e também para carregar armas pesadas"
+  characteristic.description = "Personagens fortes são detentoras de extremo poder físico. São destemidas e impressionantes! Conseguem levantar coisas muito pesadas, causar ataques físicos devastadores, empurrar/arremessar coisas a uma longa distância e intimidar/provocar a qualquer um!"
 end
 Characteristic.find_or_create_by(name: 'Vitalidade') do |characteristic|
-  characteristic.description = "Essa habilidade representa a quantidade de vida que você terá durante o jogo"
+  characteristic.description = "Personagens de vitalidade elevada possuem alto vigor e energia. São resistentes e estão sempre dispostos. Conseguem manter testes bem sucedidos de agilidade e força por um longo período, mater-se de pé quando ninguém mais consegue, sofrer dano reduzido de efeitos especiais e possuem uma vida mais longa."
 end

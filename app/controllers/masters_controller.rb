@@ -1,7 +1,9 @@
 class MastersController < ApplicationController
+
   def index
     @master = Master.find_by(user_id: current_user.id)
-    @characters = Character.find_by(game_id: @master.game.id)
+    @characters = Character.where(game_id: @master.game.id)
+    @itens = Item.where.not(kind: "Inicial")
   end
 
   def create
