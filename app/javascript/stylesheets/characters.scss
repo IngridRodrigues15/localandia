@@ -92,6 +92,20 @@
   p {
     margin-bottom: 0;
   }
+  input[type="submit"] {
+    background-color: #432873;
+    color: #fff;
+    border-color: #ae00ff;
+    padding: 5px 10px;
+    margin-bottom: 30px;
+  }
+  input[type="submit" i] {
+    background-color: #432873;
+    border-color: #ae00ff;
+  }
+  input[type="submit"]:disabled {
+    background-color: #2b2a2b82;
+  }
   .card {
     min-height: 190px;
     margin-bottom: 30px;
@@ -112,7 +126,8 @@
       height: 25px;
     }
     .progress-bar {
-      background-color: #dc3545;
+      background-color: #432b73;
+      width: 11%;
     }
     .form-control {
       width:20%;
@@ -120,6 +135,8 @@
       position: absolute;
       height: 27px;
       border-radius: 0 5px 5px 0px;
+      outline: none !important;
+      box-shadow: none !important;
     }
   }
   .characteristics-tips {
