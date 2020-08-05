@@ -1,1 +1,49 @@
-<p>Todas as fichas </p>
+<div class="container master-index">
+  <div class="row">
+    <div class="col-sm">
+      <span class="badge badge-secondary">Mestre</span>
+        <h5>Todas as jogadoras da sala </h5>
+        <% @characters.each do |character| %>
+          <div class="character-info d-flex justify-content-start">
+            <div class="character-icon">
+              <% if character.sheet.character_type.name == "Maga"  %>
+                <div class="wizard-image class-image"><%= svg_icon 'wizard' %></div>
+              <% elsif character.sheet.character_type.name == "Sacerdotisa" %>
+                 <div class="priest-image class-image"><%= svg_icon 'magic-book' %></div>
+              <% elsif character.sheet.character_type.name == "Arqueira" %>
+                <div class="archer-image class-image"><%= svg_icon 'bow' %></div>
+              <% elsif character.sheet.character_type.name == "Espadachim" %>
+              <div class="swordsman-image class-image"><%= svg_icon 'sword' %></div>
+              <% end %>
+            </div>
+            <div class="character-class">
+              <p><%= character.nome %></p>
+              <p><%= character.sheet.character_type.name %></p>
+              <div class="rubies-info d-flex justify-content-start"">
+                <i class="fas fa-gem"  data-fa-transform="rotate-45"></i><spam><%= character.sheet.rubies %></spam>
+                <i class="fas fa-trophy"></i><spam><%= character.sheet.heroic_points.to_i %></spam>
+              </div>
+            </div>
+            <div class="r">
+              <i class="fas fa-heart"></i> <spam><%= character.sheet.life %></spam>
+              <i class="fas fa-mug-hot"></i> <spam><%= character.sheet.mana.to_i  %></spam>
+            </div>
+            <% character.sheet.sheet_characteristics.group(:characteristic_id).each do |sheet_characteristic| %>
+              <spam><%= sheet_characteristic.characteristic.name %>: </spam>
+              <spam><%= sheet_characteristic.quantity %></spam>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <h5>Todas as items da sala </h5>
+        <% @itens.each do |item| %>
+          <p> <%= item.kind %></p>
+          <p><%=  item.price %></p>
+          <p><%= item.description%></p>
+        <% end %>
+    </div>
+  </div>
+</div>
