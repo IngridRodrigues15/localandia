@@ -16,18 +16,19 @@ characteristic = (function () {
 
   function fillRemainingPoints() {
     $('.characteristic-input').on('keyup click', function(e) {
-      var used_points = 0
+      var used_points = 0,
+          total_points = 20;
       $('.characteristic-input').each(function(i, obj) {
           used_points += parseInt(obj.value);
       });
 
-      var remaining_points = 25 - used_points;
+      var remaining_points = total_points - used_points;
       if (isNaN(remaining_points)) {
         remaining_points = 0
       }
       $(".total-points-number").text(parseInt(remaining_points));
 
-      if (used_points != 25) {
+      if (used_points != total_points) {
          $("input[type='submit']").prop('disabled', true);
       } else {
         $("input[type='submit']").prop('disabled', false);
