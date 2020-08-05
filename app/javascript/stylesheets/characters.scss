@@ -2,9 +2,12 @@
   height: 100%;
   position: relative;
   min-height: 100vh;
-
   .character-form {
     margin-top: 100px;
+    label {
+      font-size: 18px;
+      margin: 10px 0;
+    }
     input[type="submit"] {
       background-color: #432873;
       color: #fff;
@@ -17,7 +20,6 @@
     }
   }
 }
-
 
 
 .character-game-form,
@@ -47,6 +49,10 @@
     .card-text {
       text-transform: capitalize;
     }
+  }
+  label {
+    font-size: 18px;
+    margin: 10px 0;
   }
 }
 

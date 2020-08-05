@@ -1,11 +1,16 @@
-<section class ="game-form">
-  <%= form_for @game do |f| %>
+<div class="container game-form">
+  <div class="row">
+    <div class="col-sm">
+      <span class="badge badge-secondary">Mestre</span>
+      <%= form_for @game do |f| %>
 
-    <div class="form-group">
-      <%= f.label :description, "Descriçao" %>
-      <%= f.text_field :description, class: "form-control" %>
+        <div class="form-group">
+          <%= f.label :description, "Em qual sala você está ?" %>
+          <%= f.text_field :description, class: "form-control" %>
+        </div>
+
+        <%= f.submit "Enviar" %>
+      <% end %>
     </div>
-
-    <%= f.submit "Enviar" %>
-  <% end %>
-</section>
+  </div>
+</div>
