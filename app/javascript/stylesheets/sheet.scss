@@ -3,12 +3,12 @@
   .character-info {
       display: block;
       .character-icon {
-        background-color: #fff;
+        background-color: $icon-background;
         border-radius: 100%;
         height: 80px;
         width: 80px;
         svg {
-            color: #d01010;
+            color: $icon-color;
             fill: currentColor;
             margin: 17px;
             width: 43px;
@@ -35,11 +35,11 @@
          font-size: 20px;
        }
        svg.svg-inline--fa.fa-gem {
-         color: #f24e51;
+         color: $ruby-color;
        }
        svg.svg-inline--fa.fa-trophy {
          margin-left: 10px;
-         color: #ffc107;
+         color: $trophy-color;
        }
 
      }
@@ -58,7 +58,7 @@
       }
       spam {
         font-size: 14px;
-        color: #ccc;
+        color: $input-border;
       }
       .life-bar {
         background-color: #f74e52;
@@ -116,10 +116,10 @@
     font-size: 15px;
   }
   .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
-    color: #432873;
-    background-color: #f9f9f9;
+    color: $title-primary;
+    background-color: $background-body;
   }
   a {
-   color: #6515e6;
+   color: $link-primary;
   }
 }

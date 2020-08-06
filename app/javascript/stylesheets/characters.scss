@@ -9,14 +9,14 @@
       margin: 10px 0;
     }
     input[type="submit"] {
-      background-color: #432873;
-      color: #fff;
-      border-color: #ae00ff;
+      background-color: $button-background-color;
+      color: $button-text;
+      border-color: $button-border-color;
       padding: 5px 10px;
     }
     input[type="submit" i] {
-      background-color: #432873;
-      border-color: #ae00ff;
+      background-color: $button-background-color;
+      border-color: $button-border-color;
     }
   }
 }
@@ -29,18 +29,18 @@
     margin-bottom: 50px;
   }
   h2 {
-    color: #432873;
+    color: $title-primary;
     font-size: 23px;
   }
   input[type="submit"] {
-    background-color: #432873;
-    color: #fff;
-    border-color: #ae00ff;
+    background-color: $button-background-color;
+    color: $button-text;
+    border-color: $button-border-color;
     padding: 5px 10px;
   }
   input[type="submit" i] {
-    background-color: #432873;
-    border-color: #ae00ff;
+    background-color: $button-background-color;
+    border-color: $button-border-color;
   }
 }
 
@@ -76,13 +76,13 @@
     display: inline-block;
   }
   .class-image {
-    color: #d01010;
+    color: $icon-color;
     display: inline-block;
     float: right;
     svg {
       width: 40px;
       height: 40px;
-      color: #d01010;
+      color: $icon-color;
       fill: currentColor;
     }
   }
@@ -91,7 +91,7 @@
 .characteristics-form {
   margin-top: 50px;
   h2 {
-    color: #432873;
+    color: $title-primary;
     font-size: 23px;
     margin-bottom: 50px;
   }
@@ -99,18 +99,18 @@
     margin-bottom: 0;
   }
   input[type="submit"] {
-    background-color: #432873;
-    color: #fff;
-    border-color: #ae00ff;
+    background-color: $button-background-color;
+    color: $button-text;
+    border-color: $button-border-color;
     padding: 5px 10px;
     margin-bottom: 30px;
   }
   input[type="submit" i] {
-    background-color: #432873;
-    border-color: #ae00ff;
+    background-color: $button-background-color;
+    border-color: $button-border-color;
   }
   input[type="submit"]:disabled {
-    background-color: #2b2a2b82;
+    background-color: $button-background-disabled;
   }
   .card {
     min-height: 190px;
@@ -136,7 +136,7 @@
       height: 25px;
     }
     .progress-bar {
-      background-color: #432b73;
+      background-color: $background-primary;
       width: 11%;
     }
     .form-control {
@@ -151,8 +151,8 @@
   }
   .characteristics-tips {
     .card {
-      background-color: #432873;
-      color: #fff;
+      background-color: $background-primary;
+      color: $white;
     }
     .title-tips {
       display: inline-block;

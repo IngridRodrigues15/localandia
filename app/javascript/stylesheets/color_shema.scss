@@ -1,13 +1,39 @@
-$color-white: #fff;
-$color-background-purple: #361f5d;
-$color-background-light-grey: #f9f9f9;
+$white: #fff;
+
+$purple: #432873;
+
+$button-text: $white;
+$button-background-color: $purple;
+$button-border-color: #ae00ff;
+$button-background-disabled:#2b2a2b82;
+
+$title-primary: $purple;
+
+$icon-color: #d01010;
+$icon-background: $white;
+
+
+$ruby-color: #f24e51;
+$trophy-color: #ffc107;
+
+$background-primary: $purple;
+$background-body: #f9f9f9;
+$text-body: #34313a;
+
+$player-background-color: #361f5d;
+
+$card-subtitle-color: #505050;
+
+$input-border: #ccc;
+
+$link-primary: #6515e6;
 
 .light-grey {
-  background-color: $color-background-light-grey;
+  background-color: $background-body;
 }
 
 .form-control:focus {
-  border-color: #432873;
+  border-color: $button-border-color;
   box-shadow: 0px 0px 0px 0.2rem rgba(161,75,239,0.2);
 }
 
@@ -17,42 +43,43 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .badge-secondary {
-  color: #fff;
-  background-color: #432b73;
+  color: $button-text;
+  background-color: $button-background-color;
 }
 
 input[type="submit"] {
-  background-color: #432873;
-  color: #fff;
-  border-color: #ae00ff;
+  background-color: $button-background-color;
+  color: $button-text;
+  border-color: $button-border-color;
 }
 input[type="submit" i] {
-  background-color: #432873;
-  border-color: #ae00ff;
+  background-color: $button-background-color;
+  border-color: $button-border-color;
 }
+
 input[type="submit"]:disabled {
-  background-color: #2b2a2b82;
+  background-color: $button-background-disabled;
 }
 
 body {
-  background-color: #f9f9f9;
+  background-color: $background-body;
   font-family: Roboto Condensed,sans-serif;
-  color: #34313a;
+  color: $text-body;
 }
 
 .navbar.navbar-dark.bg-dark {
-  background-color: #432873 !important;
-  color: #fff;
+  background-color: $background-primary !important;
+  color: $button-text;
   .navbar-text {
-    color: #fff;
+    color: $button-text;
   }
   .text-secondary  {
-    color: #fff !important;
+    color: $button-text !important;
   }
 }
 
 .player-navbar {
-  background-color: #361f5d;
+  background-color: $player-background-color;
   padding: 40px 0;
-  color: #fff;
+  color: $button-text;
 }
