@@ -21,7 +21,7 @@
   }
   .card-subtitle {
     font-size: 14px;
-    color: #505050;
+    color: $card-subtitle-color;
   }
   .character-icon {
     height: 80px;
@@ -29,7 +29,7 @@
     display: inline-block;
     float: right;
     svg {
-        color: #d01010;
+        color: $icon-color;
         fill: currentColor;
         margin: 17px;
         width: 43px;
@@ -48,12 +48,12 @@
     }
     svg {
       margin-left: 5px;
-      color: #d01010;
+      color: $icon-color;
       fill: currentColor;
     }
     input#quantity {
       width: 56px;
-      border: 1px solid #ccc;
+      border: 1px solid $input-border;
       border-radius: 4px;
     }
   }
