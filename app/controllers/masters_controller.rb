@@ -1,8 +1,9 @@
 class MastersController < ApplicationController
 
   def index
-    @master = Master.find_by(user_id: current_user.id)
-    @characters = Character.where(game_id: @master.game.id)
+    define_path
+    @master = load_master
+    @characters = Character.where(game_id: @master.try(:game).try(:id))
     @itens = Item.where.not(kind: "Inicial")
   end
 
@@ -33,13 +34,7 @@ class MastersController < ApplicationController
       render :new
     elsif @master.game.nil?
       redirect_to new_game_path
-    else
-      redirect_to masters_path
     end
-  end
-
-  def load_master
-    Master.find_by(user_id: current_user.id)
   end
 
 end

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  root to: "characters#index"
+  root to: "home#index"
   resources :sheets, only: [:new, :create, :show] do
     member do
       get 'define_character_type'
