@@ -1,10 +1,20 @@
 <div class="container master-index">
-  <div class="row">
-    <div class="col-sm">
-      <span class="badge badge-secondary">Mestre</span>
+  <% if @characters.empty? %>
+    <div class="row">
+      <div class="col-sm">
+        <span class="badge badge-secondary">Mestre</span>
+        <h5>Aguardando as jogadoras da sua sala </h5>
+      </div>
+    </div>
+  <% else %>
+    <div class="row">
+      <div class="col-sm">
+        <span class="badge badge-secondary">Mestre</span>
         <h5>Todas as jogadoras da sala </h5>
       </div>
-  </div>
+    </div>
+  <% end %>
+
   <div class="row">
     <% @characters.each do |character| %>
       <div class="col-md-6 character-info">
