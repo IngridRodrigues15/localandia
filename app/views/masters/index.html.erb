@@ -60,6 +60,26 @@
                 <spam><%= sheet_characteristic.characteristic.name %>:  <%= sheet_characteristic.quantity %></spam>
               <% end %>
             </div>
+            <div class="character-inventory">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Quantidade</th>
+                  </tr>
+                </thead>
+                 <tbody>
+                  <% character.sheet.inventories.each do |inventory| %>
+                    <tr>
+                      <td><%= inventory.item.name %></td>
+                      <td><%= inventory.item.description %></td>
+                      <td><%= inventory.quantity %></td>
+                    </tr>
+                  <% end %>
+                 </tbody>
+               </table>
+            </div>
           </div>
         </div>
       </div>
