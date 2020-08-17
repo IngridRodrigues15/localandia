@@ -54,13 +54,12 @@ class SheetsController < ApplicationController
                             life: params[:sheet][:life],
                             heroic_points: params[:sheet][:heroic_points])
 
-    ActionCable.server.broadcast 'sheet_attributes',
-     rubies: sheet.rubies,
-     mana: sheet.mana,
-     life: sheet.life,
-     rubies: sheet.heroic_points,
-     heroic_points: sheet.id,
-     user: current_user.id
+    ActionCable.server.broadcast 'sheet_channel',
+      rubies: sheet.rubies,
+      mana: sheet.mana,
+      life: sheet.life,
+      heroic_points: sheet.heroic_points,
+      sheet_id: sheet.id
      head :ok
   end
 
