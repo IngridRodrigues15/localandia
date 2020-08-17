@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
 
   root to: "home#index"
-  resources :sheets, only: [:new, :create, :show] do
+  resources :sheets, only: [:new, :create, :show, :update] do
     member do
       get 'define_character_type'
       get 'characteristics_form'
       post 'characteristics'
+      post 'update_player_attributes'
     end
   end
   resources :characters, only: [:index, :new, :create, :update] do
@@ -19,5 +20,7 @@ Rails.application.routes.draw do
     end
   end
   resources :games, only: [:new, :create]
-  resources :masters, only: [:index, :new, :create]
+  resources :masters, only: [:index, :new, :create] do
+
+  end
 end

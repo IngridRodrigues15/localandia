@@ -5,6 +5,7 @@ class MastersController < ApplicationController
     @master = load_master
     @characters = Character.where(game_id: @master.try(:game).try(:id))
     @itens = Item.where.not(kind: "Inicial")
+    @sheet = Sheet.new
   end
 
   def create

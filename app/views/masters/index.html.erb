@@ -20,7 +20,6 @@
       <div class="col-md-6 character-info">
         <div class="card">
           <div class="card-body">
-
             <div class="character-icon">
               <% if character.sheet.character_type.name == "Maga"  %>
                 <div class="wizard-image class-image"><%= svg_icon 'wizard' %></div>
@@ -37,22 +36,25 @@
               <p class="card-subtitle"><%= character.sheet.character_type.name %></p>
             </div>
             <div class="changeable-attributes">
+              <%= form_with(model: character.sheet) do |f| %>
                 <div class="changeable-item">
                   <i class="fas fa-gem"  data-fa-transform="rotate-45"></i>
-                  <%= number_field_tag 'quantity', character.sheet.rubies %>
+                  <%= f.number_field :rubies %>
                 </div>
                 <div class="changeable-item">
                     <i class="fas fa-trophy"></i><spam>
-                    <%= number_field_tag 'quantity', character.sheet.heroic_points.to_i %>
+                    <%= f.number_field :heroic_points %>
                 </div>
                 <div class="changeable-item">
                   <i class="fas fa-heart"></i>
-                  <%= number_field_tag 'quantity', character.sheet.life %>
+                  <%= f.number_field :life %>
                 </div>
                 <div class="changeable-item">
                   <i class="fas fa-mug-hot"></i>
-                  <%= number_field_tag 'quantity', character.sheet.mana.to_i %>
+                  <%= f.number_field :mana %>
                 </div>
+                <%= f.submit "Atualizar" %>
+              <% end %>
             </div>
             <div class="player-characteristics">
               <p class="characteristics-title">Atributos:</p>
