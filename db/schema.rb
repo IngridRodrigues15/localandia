@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_08_05_133701) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "character_types", force: :cascade do |t|
     t.string "name"
     t.text "skills"
@@ -35,8 +38,8 @@ ActiveRecord::Schema.define(version: 2020_08_05_133701) do
   end
 
   create_table "inventories", force: :cascade do |t|
-    t.integer "sheet_id"
-    t.integer "item_id"
+    t.bigint "sheet_id"
+    t.bigint "item_id"
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -54,21 +57,21 @@ ActiveRecord::Schema.define(version: 2020_08_05_133701) do
   end
 
   create_table "players", force: :cascade do |t|
-    t.integer "sheet_id"
-    t.integer "user_id"
+    t.bigint "sheet_id"
+    t.bigint "user_id"
     t.string "nome"
     t.string "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "game_id"
+    t.bigint "game_id"
     t.index ["game_id"], name: "index_players_on_game_id"
     t.index ["sheet_id"], name: "index_players_on_sheet_id"
     t.index ["user_id"], name: "index_players_on_user_id"
   end
 
   create_table "sheet_characteristics", force: :cascade do |t|
-    t.integer "sheet_id"
-    t.integer "characteristic_id"
+    t.bigint "sheet_id"
+    t.bigint "characteristic_id"
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -83,7 +86,7 @@ ActiveRecord::Schema.define(version: 2020_08_05_133701) do
     t.integer "heroic_points"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "character_type_id"
+    t.bigint "character_type_id"
     t.index ["character_type_id"], name: "index_sheets_on_character_type_id"
   end
 

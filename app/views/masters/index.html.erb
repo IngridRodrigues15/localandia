@@ -56,7 +56,7 @@
             </div>
             <div class="player-characteristics">
               <p class="characteristics-title">Atributos:</p>
-              <% character.sheet.sheet_characteristics.group(:characteristic_id).each do |sheet_characteristic| %>
+              <% character.sheet.sheet_characteristics.each do |sheet_characteristic| %>
                 <spam><%= sheet_characteristic.characteristic.name %>:  <%= sheet_characteristic.quantity %></spam>
               <% end %>
             </div>

@@ -24,7 +24,7 @@ class SheetsController < ApplicationController
   def show
     @character = load_character
     @sheet = Sheet.find_by(id: params[:id])
-    @sheet_characteristics = @sheet.sheet_characteristics.group(:characteristic_id)
+    @sheet_characteristics = @sheet.sheet_characteristics
   end
 
   def characteristics_form
