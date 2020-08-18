@@ -2,7 +2,7 @@ import consumer from "./consumer"
 
 consumer.subscriptions.create("SheetChannel", {
   connected() {
-     console.log("Connected to the room!");
+     console.log("Connected!");
     // Called when the subscription is ready for use on the server
   },
 
@@ -11,8 +11,9 @@ consumer.subscriptions.create("SheetChannel", {
   },
 
   received(data) {
-    // Called when there's incoming data on the websocket for this channel
-    console.log("Recieving:")
-   console.log(data)
+   $("#sheet_rubies_value[data_sheet_id="+data["sheet_id"]+"]").text(data["rubies"])
+   $("#sheet_heroic_points_value[data_sheet_id="+data["sheet_id"]+"]").text(data["heroic_points"])
+   $("#sheet_life_value[data_sheet_id="+data["sheet_id"]+"]").text(data["life"])
+   $("#sheet_mana_value[data_sheet_id="+data["sheet_id"]+"]").text(data["mana"])
   }
 });
