@@ -12,6 +12,7 @@ class SheetsController < ApplicationController
   def create
     @sheet = Sheet.new(sheet_params)
     @sheet.rubies = 150
+    @sheet.heroic_points = 0
 
     if @sheet.save && link_sheet_to_caracter(@sheet) && initial_itens(@sheet)
       define_path
@@ -43,6 +44,23 @@ class SheetsController < ApplicationController
     @sheet.define_player_life_points
     @sheet.define_player_mana_points
     redirect_to sheet_path(@sheet)
+  end
+
+  def update
+    sheet = Sheet.find_by(id: params[:id])
+    actual_master = load_master
+    sheet.update_attributes(rubies: params[:sheet][:rubies],
+                            mana: params[:sheet][:mana],
+                            life: params[:sheet][:life],
+                            heroic_points: params[:sheet][:heroic_points])
+
+    ActionCable.server.broadcast 'sheet_channel',
+      rubies: sheet.rubies,
+      mana: sheet.mana,
+      life: sheet.life,
+      heroic_points: sheet.heroic_points,
+      sheet_id: sheet.id
+     head :ok
   end
 
   private
