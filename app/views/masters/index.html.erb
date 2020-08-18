@@ -98,15 +98,27 @@
             <th scope="col">Tipo</th>
             <th scope="col">Preço</th>
             <th scope="col">Descrição</th>
+            <th scope="col">Jogador</th>
+            <th scope="col">quantidade</th>
+            <th scope="col">Ação</th>
           </tr>
         </thead>
          <tbody>
           <% @itens.each do |item| %>
             <tr>
-              <td><%= item.name %></td>
-              <td><%= item.kind %></td>
-              <td><%= item.price %></td>
-              <td><%= item.description %></td>
+              <%= form_with(url: inventory_update_by_item_path) do |f| %>
+                <%= f.hidden_field :item_id, value: item.id %>
+                <td><%= item.name %></td>
+                <td><%= item.kind %></td>
+                <td><%= item.price %></td>
+                <td><%= item.description %></td>
+                <td><%= f.collection_select(:character_id, @characters, :id, :nome) %></td>
+                <td><%= f.number_field :quantity %></td>
+                <td>
+                  <%= f.hidden_field :item_id, value: item.id %>
+                  <%= f.submit "Adicionar" %>
+                </td>
+              <% end %>
             </tr>
           <% end %>
          </tbody>

@@ -21,4 +21,7 @@ Rails.application.routes.draw do
   end
   resources :games, only: [:new, :create]
   resources :masters, only: [:index, :new, :create]
+
+  post '/inventory/update_by_item/', to: 'inventory#update_by_item'
+
 end
