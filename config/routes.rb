@@ -20,7 +20,5 @@ Rails.application.routes.draw do
     end
   end
   resources :games, only: [:new, :create]
-  resources :masters, only: [:index, :new, :create] do
-
-  end
+  resources :masters, only: [:index, :new, :create]
 end
