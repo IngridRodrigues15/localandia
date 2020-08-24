@@ -39,7 +39,7 @@
               <%= form_with(model: character.sheet) do |f| %>
                 <div class="changeable-item">
                   <i class="fas fa-gem"  data-fa-transform="rotate-45"></i>
-                  <%= f.number_field :rubies %>
+                  <%= f.number_field :rubies, :data => {:sheet_id => character.sheet.id } %>
                 </div>
                 <div class="changeable-item">
                     <i class="fas fa-trophy"></i><spam>

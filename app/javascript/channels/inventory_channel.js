@@ -11,5 +11,8 @@ consumer.subscriptions.create("InventoryChannel", {
 
   received(data) {
     console.log(data)
+
+    $("input[data_sheet_id="+data["sheet_id"]+"]").attr('value', data["rubies"]);
+
   }
 });

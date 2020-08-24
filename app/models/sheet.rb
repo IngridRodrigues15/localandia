@@ -40,4 +40,9 @@ class Sheet < ApplicationRecord
       self.save
     end
   end
+
+  def deduct_rubies(quantity, item_price)
+    remaining = self.rubies - (quantity * item_price)
+    self.update_attributes(rubies: remaining)
+  end
 end
