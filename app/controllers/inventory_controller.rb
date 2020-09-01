@@ -11,7 +11,8 @@ class InventoryController < ApplicationController
     ActionCable.server.broadcast 'inventory_channel',
       rubies: sheet.rubies,
       last_item: sheet.inventories.find_by(item_id: item.id),
-      item_details: item
+      item_details: item,
+      sheet_id: sheet.id
      head :ok
   end
 end
