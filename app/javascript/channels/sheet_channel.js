@@ -2,7 +2,7 @@ import consumer from "./consumer"
 
 consumer.subscriptions.create("SheetChannel", {
   connected() {
-     console.log("Connected!");
+     console.log("Sheet Connected!");
   },
 
   disconnected() {
