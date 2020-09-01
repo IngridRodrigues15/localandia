@@ -86,9 +86,9 @@
                 <th scope="col">Quantidade</th>
               </tr>
             </thead>
-             <tbody>
+             <tbody data-sheet-id= <%= @sheet.id %>>
               <% @sheet.inventories.each do |inventory| %>
-                <tr>
+                <tr data-id= <%= inventory.item.id %>>
                   <td><%= inventory.item.name %></td>
                   <td><%= inventory.item.description %></td>
                   <td><%= inventory.quantity %></td>
