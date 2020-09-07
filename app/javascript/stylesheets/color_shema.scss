@@ -1,5 +1,12 @@
-$white: #fff;
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap');
 
+$highlight-font: 'Love Ya Like A Sister', cursive;
+$handwrite-font: 'Indie Flower', cursive;
+$default-font: 'Kumbh Sans', sans-serif;
+
+$white: #fff;
 $purple: #432873;
 
 $button-text: $white;
@@ -45,12 +52,14 @@ input[type=number]::-webkit-outer-spin-button {
 .badge-secondary {
   color: $button-text;
   background-color: $button-background-color;
+  font-family: $highlight-font;
 }
 
 input[type="submit"] {
   background-color: $button-background-color;
   color: $button-text;
   border-color: $button-border-color;
+  font-family: $highlight-font;
 }
 input[type="submit" i] {
   background-color: $button-background-color;
@@ -63,7 +72,7 @@ input[type="submit"]:disabled {
 
 body {
   background-color: $background-body;
-  font-family: Roboto Condensed,sans-serif;
+  font-family: $default-font;
   color: $text-body;
 }
 
