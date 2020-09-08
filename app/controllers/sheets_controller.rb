@@ -39,7 +39,8 @@ class SheetsController < ApplicationController
     @sheet = Sheet.find_by(id: params[:id])
     characteristics = Characteristic.all
     characteristics.each do |characteristic|
-      @sheet.sheet_characteristics.create(characteristic: characteristic, quantity: params[characteristic.name]["quantity"].to_i)
+      @sheet.sheet_characteristics.create_or_update(characteristic_id: characteristic.id,
+                                                    quantity: params[characteristic.name]["quantity"].to_i)
     end
     @sheet.define_player_life_points
     @sheet.define_player_mana_points
