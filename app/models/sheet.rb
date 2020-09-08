@@ -25,6 +25,7 @@ class Sheet < ApplicationRecord
 
   def define_player_life_points
     self.life = 25 + self.vitality
+    self.updated_life = self.life
     self.save
   end
 
