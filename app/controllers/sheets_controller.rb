@@ -50,13 +50,14 @@ class SheetsController < ApplicationController
     sheet = Sheet.find_by(id: params[:id])
     actual_master = load_master
     sheet.update_attributes(rubies: params[:sheet][:rubies],
-                            mana: params[:sheet][:mana],
+                            updated_mana: params[:sheet][:mana],
                             updated_life: params[:sheet][:life],
                             heroic_points: params[:sheet][:heroic_points])
 
     ActionCable.server.broadcast 'sheet_channel',
       rubies: sheet.rubies,
       mana: sheet.mana,
+      updated_mana: sheet.updated_mana,
       life: sheet.life,
       updated_life: sheet.updated_life,
       heroic_points: sheet.heroic_points,

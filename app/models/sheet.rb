@@ -32,14 +32,13 @@ class Sheet < ApplicationRecord
   def define_player_mana_points
     if self.character_type.name = "Mago"
       self.mana = 5 + knowledge
-      self.save
     elsif self.character_type.name = "Sacerdotisa"
       self.mana = charisma + knowledge
-      self.save
     else
       self.mana = 0
-      self.save
     end
+    self.updated_mana = self.mana
+    self.save
   end
 
   def deduct_rubies(quantity, item_price)

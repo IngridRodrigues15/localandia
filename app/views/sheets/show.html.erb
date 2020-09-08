@@ -29,11 +29,14 @@
           <div class="info-bar">
             <i class="fas fa-heart"></i> <div class="bar life-bar"></div>
             <spam id="sheet_updated_life_value" data_sheet_id= <%= @sheet.id %>><%= @sheet.updated_life %></spam>
-            <spam>/</spam>
+            <spam> / </spam>
             <spam id="sheet_life_value" data_sheet_id= <%= @sheet.id %>><%= @sheet.life %></spam>
           </div>
           <div class="info-bar">
-            <i class="fas fa-mug-hot"></i> <div class="bar mana-bar"></div> <spam id="sheet_mana_value" data_sheet_id= <%= @sheet.id %>><%= @sheet.mana.to_i  %></spam>
+            <i class="fas fa-mug-hot"></i> <div class="bar mana-bar"></div>
+            <spam id="sheet_updated_mana_value" data_sheet_id= <%= @sheet.id %>><%= @sheet.updated_mana.to_i%></spam>
+            <spam> / </spam>
+            <spam id="sheet_mana_value" data_sheet_id= <%= @sheet.id %>><%= @sheet.mana.to_i  %></spam>
           </div>
         </div>
       </div>
