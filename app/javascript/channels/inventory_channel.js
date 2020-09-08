@@ -10,22 +10,12 @@ consumer.subscriptions.create("InventoryChannel", {
   },
 
   received(data) {
-    console.log(data);
-    console.log(data["rubies"]);
-
     var sheet = data["sheet_id"],
         rubies = data["rubies"],
         item_id = data["last_item"]["item_id"],
         item_quantity = data["last_item"]["quantity"],
         item_name = data["item_details"]["name"],
         item_description = data["item_details"]["description"];
-
-
-    console.log(item_id);
-    console.log(item_quantity);
-    console.log(item_name);
-    console.log(item_description);
-
 
     // Atualiza os rubies na tela do mestre
     $("input[data-sheet-id="+sheet+"]").attr('value', rubies);
@@ -38,11 +28,7 @@ consumer.subscriptions.create("InventoryChannel", {
       $("tbody[data-sheet-id="+sheet+"]").append('<tr data-id='+item_id+'><td>'+item_name+'</td><td>'+item_description+'</td><td>'+item_quantity+'</td></tr>');
     }
 
-    console.log(sheet);
-    console.log(rubies);
-
     // Atualiza os rubies na tela do jogador
     $("#sheet_rubies_value[data_sheet_id="+sheet+"]").text(rubies);
-
   }
 });
