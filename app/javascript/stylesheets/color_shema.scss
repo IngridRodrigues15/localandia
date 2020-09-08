@@ -9,39 +9,43 @@ $default-font: 'Kumbh Sans', sans-serif;
 $white: #fff;
 $purple: #432873;
 
+$dark-blue: #0e2d58;
+$light-blue: #6893d0;
+$red: #ef0743;
+
 $button-text: $white;
-$button-background-color: $purple;
-$button-border-color: #ae00ff;
+$button-background-color: $red;
+$button-border-color: #ffb3b3;
 $button-background-disabled:#2b2a2b82;
 
-$title-primary: $purple;
+$title-primary: $dark-blue;
 
-$icon-color: #d01010;
+$icon-color: $red;
 $icon-background: $white;
 
 
 $ruby-color: #f24e51;
 $trophy-color: #ffc107;
 
-$background-primary: $purple;
+$background-primary: $dark-blue;
 $background-body: #f9f9f9;
 $text-body: #34313a;
 
-$player-background-color: #361f5d;
+$player-background-color: #001c42;
 
 $card-subtitle-color: #505050;
 
 $input-border: #ccc;
 
-$link-primary: #6515e6;
+$link-primary: #0b4088;
 
 .light-grey {
   background-color: $background-body;
 }
 
 .form-control:focus {
-  border-color: $button-border-color;
-  box-shadow: 0px 0px 0px 0.2rem rgba(161,75,239,0.2);
+  border-color: $light-blue;
+  box-shadow: 0px 0px 0px 0.2rem rgba(15,55,111W,0.2);
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -61,6 +65,10 @@ input[type="submit"] {
   border-color: $button-border-color;
   font-family: $highlight-font;
 }
+input[type="submit"]:focus {
+  outline-color:  $button-border-color;
+}
+
 input[type="submit" i] {
   background-color: $button-background-color;
   border-color: $button-border-color;
