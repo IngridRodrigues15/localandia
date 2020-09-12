@@ -9,10 +9,17 @@
     margin: 10px 0;
   }
 }
-
 .master-index {
   .character-info {
     margin: 30px 0;
+  }
+  .card {
+    .btn {
+      background-color: $dark-blue;
+      color: $button-text;
+      border-color: $light-blue;
+      font-family: $highlight-font;
+    }
   }
   .card-title {
     font-weight: 700;
@@ -36,11 +43,13 @@
         height: 43px;
     }
   }
+  .player-card-attributes {
+    margin-top: 25px;
+  }
   .changeable-attributes {
     margin: 10px 0px 10px -10px;
     .changeable-item {
       display: inline-block;
-      margin-left: 5px;
     }
     spam {
       margin-right: 5px;
@@ -51,10 +60,40 @@
       color: $icon-color;
       fill: currentColor;
     }
+    .fa-trophy {
+      color: #dea702;
+    }
+    .fa-mug-hot{
+      color: #715006
+    }
+    .fa-heart, .fa-gem{
+      color: $ruby-color;
+    }
+    input[type=number] {
+      width: 60px;
+    }
     input#quantity {
-      width: 56px;
       border: 1px solid $input-border;
       border-radius: 4px;
+    }
+    .make-magic {
+      margin-left: 5px;
+      background-color: $button-background-color;
+      padding: 2px 10px;
+      border-color: $button-background-color;
+    }
+    .make-magic svg {
+      margin-left: 0px;
+      color: $white;
+      fill: currentColor;
+      width: 25px;
+      height: 25px;
+    }
+    .btn:focus , .btn.focus  {
+      background-color: $white;
+    }
+    .btn:focus svg, .btn.focus svg {
+      color: $button-background-color;
     }
   }
   .player-characteristics {
@@ -64,11 +103,37 @@
       font-size: 15px;
       display: block;
     }
+    svg.svg-inline--fa {
+      font-size: 18px;
+      margin: 15px 10px 0 0;
+      width: 15px;
+    }
+    .fa-running {
+      color: #f24e50
+    }
+    .fa-smile-wink {
+      color: #f7c109
+    }
+    .fa-book {
+      color: #616AF5
+    }
+    .fa-dumbbell {
+      color: #60BF2A
+    }
+    .fa-heartbeat {
+      color: #f24e51
+    }
   }
   .character-inventory {
+    height: 187px;
+    overflow-y: scroll;
     table {
       font-size: 12px;
     }
-
+  }
+  .modal {
+    #quantity {
+      width: 75px;
+    }
   }
 }

@@ -8,6 +8,7 @@ $default-font: 'Kumbh Sans', sans-serif;
 
 $white: #fff;
 $purple: #432873;
+$neon-green: #60BF2A;
 
 $dark-blue: #0e2d58;
 $light-blue: #6893d0;
@@ -77,6 +78,10 @@ input[type="submit" i] {
 input[type="submit"]:disabled {
   background-color: $button-background-disabled;
 }
+.btn:focus, .btn.focus {
+  outline: 0;
+  box-shadow: none;
+}
 
 body {
   background-color: $background-body;
@@ -99,4 +104,7 @@ body {
   background-color: $player-background-color;
   padding: 40px 0;
   color: $button-text;
+}
+.card-footer {
+  background-color: $white;
 }
