@@ -53,76 +53,69 @@
                   <i class="fas fa-mug-hot"></i>
                   <%= f.number_field :mana %>
                 </div>
-                <%= f.submit "Atualizar" %>
+                <%= button_tag type: 'submit', class: "btn make-magic", :data => { :toggle =>"tooltip", :placement =>"top" }, :title=>"Make magic!!" do %>
+                    <%= svg_icon 'make-magic' %>
+                <% end %>
               <% end %>
             </div>
-            <div class="player-characteristics">
-              <p class="characteristics-title">Atributos:</p>
-              <% character.sheet.sheet_characteristics.each do |sheet_characteristic| %>
-                <spam><%= sheet_characteristic.characteristic.name %>:  <%= sheet_characteristic.quantity %></spam>
-              <% end %>
-            </div>
-            <div class="character-inventory">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col">Quantidade</th>
-                  </tr>
-                </thead>
-                 <tbody data-sheet-id= <%= character.sheet.id %>>
-                  <% character.sheet.inventories.each do |inventory| %>
-                    <tr data-id= <%= inventory.item.id %>>
-                      <td><%= inventory.item.name %></td>
-                      <td><%= inventory.item.description %></td>
-                      <td><%= inventory.quantity %></td>
-                    </tr>
+            <div class="row player-card-attributes">
+              <div class="col-md-2">
+                <div class="player-characteristics">
+                  <% character.sheet.sheet_characteristics.each do |sheet_characteristic| %>
+                    <% if sheet_characteristic.characteristic.name == "Agilidade" %>
+                      <i class="fas fa-running"></i>
+                    <% elsif sheet_characteristic.characteristic.name  == "Carisma" %>
+                      <i class="fas fa-smile-wink"></i>
+                    <% elsif sheet_characteristic.characteristic.name == "Conhecimento" %>
+                      <i class="fas fa-book"></i>
+                    <% elsif sheet_characteristic.characteristic.name == "Força" %>
+                      <i class="fas fa-dumbbell"></i>
+                    <% elsif sheet_characteristic.characteristic.name == "Vitalidade" %>
+                      <i class="fas fa-heartbeat"></i>
+                    <% end %>
+                    <spam><%= sheet_characteristic.quantity %></spam>
                   <% end %>
-                 </tbody>
-               </table>
+                </div>
+              </div>
+              <div class="col-md-10">
+                <div class="character-inventory">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Quantidade</th>
+                      </tr>
+                    </thead>
+                     <tbody data-sheet-id= <%= character.sheet.id %>>
+                      <% character.sheet.inventories.each do |inventory| %>
+                        <tr data-id= <%= inventory.item.id %>>
+                          <td><%= inventory.item.name %></td>
+                          <td><%= inventory.quantity %></td>
+                        </tr>
+                      <% end %>
+                     </tbody>
+                   </table>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="card-footer d-flex justify-content-around">
+            <%= button_tag("Compras no Mercador",
+                          :type=> "button",
+                          :class => "btn toggleItensModal",
+                          :data => {:toggle=>"modal",:target=>"#purchaseMerchantModal", :character => character.id} ) %>
+
+          <%= button_tag("Compras no Ferreiro",
+                        :type=> "button",
+                        :class => "btn toggleItensModal",
+                        :data => {:toggle=>"modal",:target=>"#purchaseSmithModal", :character => character.id} ) %>
+
           </div>
         </div>
       </div>
     <% end %>
   </div>
 
-  <div class="row">
-    <div class="col-sm">
-      <h5>Todos os items </h5>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Nome</th>
-            <th scope="col">Tipo</th>
-            <th scope="col">Preço</th>
-            <th scope="col">Descrição</th>
-            <th scope="col">Jogador</th>
-            <th scope="col">quantidade</th>
-            <th scope="col">Ação</th>
-          </tr>
-        </thead>
-         <tbody>
-          <% @itens.each do |item| %>
-            <tr>
-              <%= form_with(url: inventory_update_by_item_path) do |f| %>
-                <%= f.hidden_field :item_id, value: item.id %>
-                <td><%= item.name %></td>
-                <td><%= item.kind %></td>
-                <td><%= item.price %></td>
-                <td><%= item.description %></td>
-                <td><%= f.collection_select(:character_id, @characters, :id, :nome) %></td>
-                <td><%= f.number_field :quantity %></td>
-                <td>
-                  <%= f.hidden_field :item_id, value: item.id %>
-                  <%= f.submit "Adicionar" %>
-                </td>
-              <% end %>
-            </tr>
-          <% end %>
-         </tbody>
-       </table>
-    </div>
-  </div>
+  <%= render 'shared/itens_merchant' %>
+  <%= render 'shared/itens_smith' %>
 </div>
