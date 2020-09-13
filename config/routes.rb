@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # Serve websocket cable requests in-process
   mount ActionCable.server => '/cable'
 
-  root to: "home#index"
+  root to: "home#video"
   resources :sheets, only: [:new, :create, :show, :update] do
     member do
       get 'define_character_type'

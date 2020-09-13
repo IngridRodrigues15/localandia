@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  skip_before_action :authenticate_user!, :only => [:video]
 
   def index
     master = load_master
@@ -9,4 +10,6 @@ class HomeController < ApplicationController
     end
   end
 
+  def video
+  end
 end
