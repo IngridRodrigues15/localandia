@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_05_133701) do
+ActiveRecord::Schema.define(version: 2020_09_08_020249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,8 @@ ActiveRecord::Schema.define(version: 2020_08_05_133701) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "character_type_id"
+    t.integer "updated_life"
+    t.integer "updated_mana"
     t.index ["character_type_id"], name: "index_sheets_on_character_type_id"
   end
 

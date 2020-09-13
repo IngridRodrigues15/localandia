@@ -12,7 +12,7 @@ consumer.subscriptions.create("SheetChannel", {
   received(data) {
    $("#sheet_rubies_value[data_sheet_id="+data["sheet_id"]+"]").text(data["rubies"])
    $("#sheet_heroic_points_value[data_sheet_id="+data["sheet_id"]+"]").text(data["heroic_points"])
-   $("#sheet_life_value[data_sheet_id="+data["sheet_id"]+"]").text(data["life"])
-   $("#sheet_mana_value[data_sheet_id="+data["sheet_id"]+"]").text(data["mana"])
+   $("#sheet_updated_life_value[data_sheet_id="+data["sheet_id"]+"]").text(data["updated_life"])
+   $("#sheet_updated_mana_value[data_sheet_id="+data["sheet_id"]+"]").text(data["updated_mana"])
   }
 });
