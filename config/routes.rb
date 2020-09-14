@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
 
   root to: "home#video"
+  resources :home, only: [:index]
+  
   resources :sheets, only: [:new, :create, :show, :update] do
     member do
       get 'define_character_type'

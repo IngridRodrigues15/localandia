@@ -1,7 +1,6 @@
-<!-- <video id=myvideo autobuffer autoplay="true">
-  <source src="media_v/video.mp4">
-  <object type="video/mp4" data="media_v/video.mp4"  min-width: 100% min-height: 100%">
-  </object>
-</video> -->
-
-<%= video_tag "localandia.mp4",  autoplay: :autoplay, class: "home_video"  %>
+<div class="home-video-wrapper">
+  <%= video_tag "localandia.mp4",  autoplay: :autoplay, class: "home_video"  %>
+  <%= link_to  home_index_path, class: 'btn start', title:"Jogar"  do %>
+    <i class="fa fa-play"></i> Jogar
+  <% end %>
+</div>

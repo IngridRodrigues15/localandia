@@ -1,16 +1,21 @@
 .login-container {
-  height: 100%;
-  position: relative;
-  min-height: 100vh;
-  background-image: url(../images/back.jpg);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  background-image: url(../images/background.png);
   background-repeat: no-repeat;
   background-size: cover;
   color: $button-text;
   .login-form {
     padding-top: 70px;
     .row{
-      background-color: rgba(8,32,53,0.95);
+      background-color: rgba(8,32,53,0.98);
       padding: 30px;
+    }
+    a {
+      color: $button-background-color;
     }
   }
   form#new_user {
@@ -21,7 +26,7 @@
       border-radius: 5px;
     }
     a {
-      color: #2990ff;
+      color: $button-background-color;
     }
     .field {
       margin-top: 10px;
@@ -29,8 +34,8 @@
     .actions {
       margin: 15px 0;
       input{
-        background-color: rgb(120,35,253);
-        border-color: rgb(120,35,253);
+        background-color: $button-background-color;
+        border-color:  $button-background-color;
         color: $button-text;
       }
     }
