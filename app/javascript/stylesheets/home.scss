@@ -1,0 +1,26 @@
+
+
+.home-video-wrapper {
+height: 100vh;
+display: flex;
+  .home_video {
+   width: 100vw;
+   height: 100vh;
+   position: absolute;
+   object-fit: cover;
+   top: 0;
+   z-index: -2;
+  }
+  a.start {
+    background-color: $button-background-color;
+    color: $button-text;
+    border-color: $button-border-color;
+    font-family: $highlight-font;
+    width: 200px;
+    font-weight: 600;
+    left: calc(50% - 100px);
+	  top: calc(50% - 55px);
+    position: absolute;
+    font-size: 28px;
+  }
+}
