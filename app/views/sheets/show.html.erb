@@ -27,7 +27,10 @@
       <div class="col-sm">
         <div class="bars-container">
           <div class="info-bar">
-            <i class="fas fa-heart"></i> <div class="bar life-bar"></div>
+            <i class="fas fa-heart"></i>
+             <div class="progress ">
+               <div class="progress-bar life-bar" id="life-bar" data_sheet_id= <%= @sheet.id %> role="progressbar" aria-valuenow="<%= @sheet.updated_life %>" aria-valuemin="0" aria-valuemax="<%= @sheet.life %>"></div>
+             </div>
             <spam id="sheet_updated_life_value" data_sheet_id= <%= @sheet.id %>><%= @sheet.updated_life %></spam>
             <spam> / </spam>
             <spam id="sheet_life_value" data_sheet_id= <%= @sheet.id %>><%= @sheet.life %></spam>
