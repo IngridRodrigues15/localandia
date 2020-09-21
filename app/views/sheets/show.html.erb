@@ -27,13 +27,19 @@
       <div class="col-sm">
         <div class="bars-container">
           <div class="info-bar">
-            <i class="fas fa-heart"></i> <div class="bar life-bar"></div>
+            <i class="fas fa-heart"></i>
+             <div class="progress ">
+               <div class="progress-bar life-bar" id="life-bar" data_sheet_id= <%= @sheet.id %> role="progressbar" aria-valuenow="<%= @sheet.updated_life %>" aria-valuemin="0" aria-valuemax="<%= @sheet.life %>"></div>
+             </div>
             <spam id="sheet_updated_life_value" data_sheet_id= <%= @sheet.id %>><%= @sheet.updated_life %></spam>
             <spam> / </spam>
             <spam id="sheet_life_value" data_sheet_id= <%= @sheet.id %>><%= @sheet.life %></spam>
           </div>
           <div class="info-bar">
-            <i class="fas fa-mug-hot"></i> <div class="bar mana-bar"></div>
+            <i class="fas fa-mug-hot"></i>
+            <div class="progress ">
+              <div class="progress-bar mana-bar" id="mana-bar" data_sheet_id= <%= @sheet.id %> role="progressbar" aria-valuenow="<%= @sheet.updated_mana.to_i %>" aria-valuemin="0" aria-valuemax="<%= @sheet.mana.to_i %>"></div>
+            </div>
             <spam id="sheet_updated_mana_value" data_sheet_id= <%= @sheet.id %>><%= @sheet.updated_mana.to_i%></spam>
             <spam> / </spam>
             <spam id="sheet_mana_value" data_sheet_id= <%= @sheet.id %>><%= @sheet.mana.to_i  %></spam>

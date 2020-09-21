@@ -60,6 +60,10 @@
         font-size: 14px;
         color: $input-border;
       }
+      .progress {
+        width: 200px;
+        display: inline-flex;
+      }
       .life-bar {
         background-color: #f74e52;
       }
