@@ -17,7 +17,7 @@ characteristic = (function () {
   function fillRemainingPoints() {
     $('.characteristic-input').on('keyup click', function(e) {
       var used_points = 0,
-          total_points = 20;
+          total_points = 25;
       $('.characteristic-input').each(function(i, obj) {
           used_points += parseInt(obj.value);
       });
