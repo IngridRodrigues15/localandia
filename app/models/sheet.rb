@@ -24,20 +24,21 @@ class Sheet < ApplicationRecord
   end
 
   def define_player_life_points
-    self.life = 25 + self.vitality
-    self.updated_life = self.life
+    life = 25 + self.vitality
+    self.life = life
+    self.updated_life = life
     self.save
   end
 
   def define_player_mana_points
-    if self.character_type.name = "Mago"
-      self.mana = 5 + knowledge
-    elsif self.character_type.name = "Sacerdotisa"
-      self.mana = charisma + knowledge
-    else
-      self.mana = 0
+    mana = 5
+    if self.character_type.name.eql? "Maga"
+      mana = 5 + knowledge
+    elsif self.character_type.name.eql? "Sacerdotisa"
+      mana = charisma + knowledge
     end
-    self.updated_mana = self.mana
+    self.mana = mana
+    self.updated_mana = mana
     self.save
   end
 

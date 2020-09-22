@@ -18,7 +18,7 @@
             <p><%= @character.nome %></p>
             <p><%= @sheet.character_type.name %></p>
             <div class="rubies-info d-flex justify-content-start"">
-              <i class="fas fa-gem"  data-fa-transform="rotate-45"></i><spam id="sheet_rubies_value" data_sheet_id= <%= @sheet.id %>><%= @sheet.rubies %></spam>
+              <i class="fas fa-gem" id="sheet-ruby-icon" data-fa-transform="rotate-45"></i><spam id="sheet_rubies_value" data_sheet_id= <%= @sheet.id %>><%= @sheet.rubies %></spam>
               <i class="fas fa-trophy"></i><spam id="sheet_heroic_points_value" data_sheet_id= <%= @sheet.id %>><%= @sheet.heroic_points.to_i %></spam>
             </div>
           </div>
