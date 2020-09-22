@@ -58,16 +58,10 @@
 
 .character-choice-form {
   .card {
-    min-height: 190px;
+    min-height: 282px;
     margin-bottom: 30px;
-    min-height: 180px;
     p.card-text {
       font-size: 14px;
-    }
-  }
-  .row {
-    .col-md-6:last-child .card {
-      min-height: 282px;
     }
   }
   .card-title {

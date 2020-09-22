@@ -104,12 +104,6 @@
                           :type=> "button",
                           :class => "btn toggleItensModal",
                           :data => {:toggle=>"modal",:target=>"#purchaseMerchantModal", :character => character.id} ) %>
-
-          <%= button_tag("Compras no Ferreiro",
-                        :type=> "button",
-                        :class => "btn toggleItensModal",
-                        :data => {:toggle=>"modal",:target=>"#purchaseSmithModal", :character => character.id} ) %>
-
           </div>
         </div>
       </div>
@@ -117,5 +111,4 @@
   </div>
 
   <%= render 'shared/itens_merchant' %>
-  <%= render 'shared/itens_smith' %>
 </div>

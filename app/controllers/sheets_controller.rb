@@ -14,7 +14,7 @@ class SheetsController < ApplicationController
     @sheet.rubies = 150
     @sheet.heroic_points = 0
 
-    if @sheet.save && link_sheet_to_caracter(@sheet) && initial_itens(@sheet)
+    if @sheet.save && link_sheet_to_caracter(@sheet) && initial_itens(@sheet) && initial_weapons(@sheet)
       define_path
     else
       set_caracter_types
@@ -98,6 +98,13 @@ class SheetsController < ApplicationController
 
   def initial_itens(sheet)
     itens = Item.where(kind: "Inicial")
+    itens.each do |item|
+      sheet.inventories.create(item: item, quantity:1)
+    end
+  end
+
+  def initial_weapons(sheet)
+    itens = Item.where(kind: sheet.character_type.name)
     itens.each do |item|
       sheet.inventories.create(item: item, quantity:1)
     end
