@@ -36,7 +36,7 @@ class CharactersController < ApplicationController
 
   private
   def set_games
-     @games = Game.all #TO DO Mostrar so os do dia
+     @games = Game.where(active: true)
   end
 
   def define_path
