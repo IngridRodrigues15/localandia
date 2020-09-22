@@ -30,12 +30,19 @@
        }
      }
      .rubies-info {
+       .ruby-icon-anime {
+         animation-name: bounce;
+         animation-timing-function: linear;
+         animation-duration: 0.8s;
+         animation-iteration-count: 2;
+       }
        svg.svg-inline--fa {
          margin-right: 10px;
          font-size: 20px;
        }
        svg.svg-inline--fa.fa-gem {
          color: $ruby-color;
+
        }
        svg.svg-inline--fa.fa-trophy {
          margin-left: 10px;
@@ -125,5 +132,23 @@
   }
   a {
    color: $link-primary;
+  }
+}
+
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+@-webkit-keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
   }
 }
