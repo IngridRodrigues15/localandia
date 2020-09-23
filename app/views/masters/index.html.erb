@@ -17,6 +17,7 @@
 
   <div class="row">
     <% @characters.each do |character| %>
+    <% next if  character.nil? || character.sheet.nil? %>
       <div class="col-md-6 col-sm-12 character-info">
         <div class="card">
           <div class="card-body">
