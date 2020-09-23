@@ -11,11 +11,16 @@
   .login-form {
     padding-top: 70px;
     .row{
-      background-color: rgba(8,32,53,0.98);
+      background-color: rgba(8,32,53,0.85);
       padding: 30px;
     }
     a {
-      color: $button-background-color;
+      padding: 6px;
+      font-family: $highlight-font;
+      background-color: $button-background-color;
+      border-color:  $button-background-color;
+      color: $button-text;
+      border-radius: 5px
     }
   }
   form#new_user {
