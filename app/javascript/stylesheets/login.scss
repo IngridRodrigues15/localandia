@@ -4,14 +4,14 @@
   position: absolute;
   object-fit: cover;
   top: 0;
-  background-image: url(../images/background.png);
+  background-image: url(../images/back.png);
   background-repeat: no-repeat;
   background-size: cover;
   color: $button-text;
   .login-form {
     padding-top: 70px;
     .row{
-      background-color: rgba(8,32,53,0.98);
+      background-color: rgba(8,32,53,0.93);
       padding: 30px;
     }
     a {
