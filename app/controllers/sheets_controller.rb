@@ -26,6 +26,7 @@ class SheetsController < ApplicationController
     @character = load_character
     @sheet = Sheet.find_by(id: params[:id])
     @sheet_characteristics = @sheet.sheet_characteristics
+    @itens = Item.where(kind: "Mercador")
   end
 
   def characteristics_form

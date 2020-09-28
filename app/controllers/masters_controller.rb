@@ -4,7 +4,7 @@ class MastersController < ApplicationController
     define_path
     @master = load_master
     @characters = Character.where(game_id: @master.try(:game).try(:id))
-    @itens = Item.where.not(kind: "Inicial")
+    @itens = Item.where(kind: "Mercador")
   end
 
   def create
