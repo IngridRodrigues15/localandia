@@ -133,8 +133,22 @@
   a {
    color: $link-primary;
   }
+  .viewItensModal {
+    border: 1px solid $button-background-color;
+    width: 100%;
+    font-family: $highlight-font;
+  }
+  .viewItensModal:hover {
+    background-color: $button-background-color;
+    color: $button-text;
+  }
 }
 
+#viewMerchantModal {
+  .fa-gem{
+    color: $ruby-color;
+  }
+}
 
 @keyframes bounce {
   from {

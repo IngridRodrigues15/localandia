@@ -108,8 +108,13 @@
               <% end %>
              </tbody>
            </table>
+           <%= button_tag("Ver itens do mercador",
+                         :type=> "button",
+                         :class => "btn viewItensModal  d-flex justify-content-center",
+                         :data => {:toggle=>"modal",:target=>"#viewMerchantModal"} ) %>
         </div>
       </div>
     </div>
   </div>
 </main>
+<%= render 'shared/view_itens_merchant' %>
