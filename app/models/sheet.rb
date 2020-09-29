@@ -31,7 +31,7 @@ class Sheet < ApplicationRecord
   end
 
   def define_player_mana_points
-    mana = 5
+    mana = 0
     if self.character_type.name.eql? "Maga"
       mana = 5 + knowledge
     elsif self.character_type.name.eql? "Sacerdotisa"

@@ -17,7 +17,9 @@
 
   <div class="row">
     <% @characters.each do |character| %>
-    <% next if  character.nil? || character.sheet.nil? %>
+    <% next if  character.nil? ||
+                character.sheet.nil? ||
+                character.sheet.character_type.nil? %>
       <div class="col-md-6 col-sm-12 character-info">
         <div class="card">
           <div class="card-body">
@@ -50,10 +52,13 @@
                   <i class="fas fa-heart"></i>
                   <%= f.number_field :life %>
                 </div>
-                <div class="changeable-item">
-                  <i class="fas fa-mug-hot"></i>
-                  <%= f.number_field :mana %>
-                </div>
+                <% if character.sheet.character_type.name == "Maga" ||
+                      character.sheet.character_type.name == "Sacerdotisa" %>
+                      <div class="changeable-item">
+                        <i class="fas fa-mug-hot"></i>
+                        <%= f.number_field :mana %>
+                      </div>
+                <% end %>
                 <%= button_tag type: 'submit', class: "btn make-magic", :data => { :toggle =>"tooltip", :placement =>"top" }, :title=>"Make magic!!" do %>
                     <%= svg_icon 'make-magic' %>
                 <% end %>
