@@ -38,6 +38,15 @@
             </div>
             <div class="changeable-attributes">
               <%= form_with(model: character.sheet) do |f| %>
+                <div class="changeable-item info-bar">
+                  <i class="fas fa-heart"></i>
+                     <div class="progress ">
+                       <div class="progress-bar life-bar" data_sheet_id= <%= character.sheet.id %> role="progressbar"  aria-valuemin="0" aria-valuenow="<%= character.sheet.updated_life %>" aria-valuemax="<%= character.sheet.life %>"></div>
+                     </div>
+                    <%= f.number_field :life, value: character.sheet.updated_life , class: "progress-life-value", :data => {:sheet_id => character.sheet.id } %>
+                    <spam> / </spam>
+                    <spam class= "total-life-value" data_sheet_id= <%= character.sheet.id %>><%= character.sheet.life %></spam>
+                </div>
                 <div class="changeable-item">
                   <i class="fas fa-gem"  data-fa-transform="rotate-45"></i>
                   <%= f.number_field :rubies, :data => {:sheet_id => character.sheet.id } %>
@@ -45,10 +54,6 @@
                 <div class="changeable-item">
                     <i class="fas fa-trophy"></i><spam>
                     <%= f.number_field :heroic_points %>
-                </div>
-                <div class="changeable-item">
-                  <i class="fas fa-heart"></i>
-                  <%= f.number_field :life %>
                 </div>
                 <div class="changeable-item">
                   <i class="fas fa-mug-hot"></i>

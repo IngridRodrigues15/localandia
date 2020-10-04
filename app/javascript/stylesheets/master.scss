@@ -46,6 +46,7 @@
   .player-card-attributes {
     margin-top: 25px;
   }
+
   .changeable-attributes {
     margin: 10px 0px 10px -10px;
     .changeable-item {
@@ -94,6 +95,26 @@
     }
     .btn:focus svg, .btn.focus svg {
       color: $button-background-color;
+    }
+  }
+  .changeable-item.info-bar {
+    display: block;
+    .progress {
+      width: 200px;
+      display: inline-flex;
+      .life-bar {
+        background-color: #f74e52;
+        width: 100%;
+      }
+
+    }
+    input[type=number] {
+      border: 1px solid #ccc;
+      padding-right: 0;
+      width: 45px;
+    }
+    input[type=number]:focus {
+      outline: none;
     }
   }
   .player-characteristics {
