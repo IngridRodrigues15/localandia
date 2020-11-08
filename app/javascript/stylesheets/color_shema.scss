@@ -10,9 +10,13 @@ $white: #fff;
 $purple: #432873;
 $neon-green: #60BF2A;
 
-$dark-blue: #0e2d58;
+$purple: #3f2f44;
+// $dark-blue: #0e2d58;
+$dark-blue: $purple;
 $light-blue: #6893d0;
 $red: #ef0743;
+
+$red2: #f74e52;
 
 $button-text: $white;
 $button-background-color: $red;
@@ -38,7 +42,7 @@ $card-subtitle-color: #505050;
 
 $input-border: #ccc;
 
-$link-primary: #0b4088;
+$link-primary: $purple;
 
 .light-grey {
   background-color: $background-body;
@@ -90,7 +94,7 @@ body {
 }
 
 .navbar.navbar-dark.bg-dark {
-  background-color: $background-primary !important;
+  background-color: $red2 !important;
   color: $button-text;
   .navbar-text {
     color: $button-text;
@@ -104,6 +108,9 @@ body {
   background-color: $player-background-color;
   padding: 40px 0;
   color: $button-text;
+}
+.player-navbar.purple {
+  background-color: $purple;
 }
 .card-footer {
   background-color: $white;
