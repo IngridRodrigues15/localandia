@@ -1,9 +1,11 @@
 <div class="login-container">
+
     <div class="login-form  d-flex justify-content-center">
       <div class="row">
         <div class="col-sm">
           <h3>Login</h3>
-
+          <%= render '/shared/alerts' %>
+          
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="field">
               <%= f.label :email %><br />
