@@ -1,4 +1,7 @@
-$(".home_video").bind("ended", function() {
 
-   $(".start").removeClass("invisible");
+$(document).ready(function () {
+  $(".home_video").bind("ended", function() {
+
+     $(".start").removeClass("invisible");
+  });
 });
