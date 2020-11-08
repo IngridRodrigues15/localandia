@@ -14,11 +14,17 @@ class SheetsController < ApplicationController
     @sheet.rubies = 150
     @sheet.heroic_points = 0
 
-    if @sheet.save && link_sheet_to_caracter(@sheet) && initial_itens(@sheet) && initial_weapons(@sheet)
+    if caracter_type_valid?(sheet_params) &&
+      @sheet.save &&
+      link_sheet_to_caracter(@sheet) &&
+      initial_itens(@sheet) &&
+      initial_weapons(@sheet)
       define_path
     else
+      flash[:notice] = "A personagem já foi escolhida por outra jogadora"
+
       set_caracter_types
-      render 'new'
+      redirect_to new_sheet_path
     end
   end
 
@@ -68,6 +74,18 @@ class SheetsController < ApplicationController
   end
 
   private
+
+  def caracter_type_valid?(sheet_params)
+    actual_character = load_character
+    actual_game = actual_character.game
+    character_in_game = Character.where(game: actual_game)
+
+    character_in_game.each do |character|
+      next if character&.sheet.nil? || character&.sheet&.character_type.nil?
+      return false if character&.sheet&.character_type&.id == sheet_params["character_type_id"].to_i
+    end
+    true
+  end
 
   def set_characteristic
     @characteristics = Characteristic.all
