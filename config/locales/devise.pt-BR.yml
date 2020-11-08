@@ -67,9 +67,9 @@ pt-BR:
       update_needs_confirmation: Você mudou o seu endereço de e-mail ou a sua senha, mas é necessário confirmar a mudança. Por favor siga o link que foi enviado para o seu novo endereço de e-mail e, caso não tenha recebido esta mensagem, cheque a sua pasta de spam.
       updated: A sua conta foi alterada com sucesso.
     sessions:
-      already_signed_out: Sessão encerrada.
-      signed_in: Sessão iniciada.
-      signed_out: Sessão encerrada.
+      already_signed_out: ""
+      signed_in: ""
+      signed_out: ""
     unlocks:
       send_instructions: Você receberá uma mensagem com instruções para desbloquear a sua conta em alguns instantes. Por favor, cheque a sua pasta de spam caso não tenha recebido esta mensagem.
       send_paranoid_instructions: Se a sua conta já existe, você receberá uma mensagem com instruções para desbloquear a sua conta em alguns instantes. Por favor, cheque a sua pasta de spam caso não tenha recebido esta mensagem.
