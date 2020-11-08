@@ -15,15 +15,8 @@
               <div class="card-body">
                 <%= f.radio_button :character_type_id, character_type.id %>
 
-                <% if character_type.name == "Maga"  %>
-                  <div class="wizard-image class-image"><%= svg_icon 'wizard' %></div>
-                <% elsif character_type.name == "Sacerdotisa" %>
-                   <div class="priest-image class-image"><%= svg_icon 'magic-book' %></div>
-                <% elsif character_type.name == "Arqueira" %>
-                  <div class="archer-image class-image"><%= svg_icon 'bow' %></div>
-                <% elsif character_type.name == "Espadachim" %>
-                <div class="swordsman-image class-image"><%= svg_icon 'sword' %></div>
-                <% end %>
+                <%= render :partial => 'shared/caracter_type', :locals => {:svg => true, :character_type => character_type } %>
+
 
                 <p class="card-title"> <%= character_type.name %></p>
                 <p class="card-text"> <%= raw character_type.skills %></p>
