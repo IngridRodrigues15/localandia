@@ -6,8 +6,8 @@
         <%= form_for @character do |f| %>
 
           <div class="form-group">
-            <%= f.label :nome, "Qual o seu nome ? " %>
-            <%= f.text_field :nome, class: "form-control" %>
+            <%= f.label :nome, "Como gostaria de ser chamada ? " %>
+            <%= f.text_field :nome,  class: "form-control", :placeholder => "Nome / Nome Social" %>
           </div>
 
           <%= f.submit "Enviar" %>
