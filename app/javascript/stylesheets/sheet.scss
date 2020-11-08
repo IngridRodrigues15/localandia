@@ -146,6 +146,82 @@
   }
 }
 
+.friend-container {
+  h5 {
+    text-align: center;
+    color: $purple;
+
+  }
+  .character-info {
+    margin: 30px 0;
+  }
+  .card-title {
+    font-weight: 700;
+    font-size: 17px;
+    max-width: 115px;
+    overflow: hidden;
+    max-height: 30px;
+    display: inline-block;
+  }
+  .card-subtitle {
+    font-size: 14px;
+    color: $card-subtitle-color;
+  }
+  .character-icon {
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    float: right;
+    svg {
+        color: $icon-color;
+        fill: currentColor;
+        margin: 10px 0 10px 10px;
+        width: 25px;
+        height: 25px;
+    }
+  }
+  .player-card-attributes {
+    margin-top: 25px;
+  }
+  .player-characteristics {
+    font-size: 14px;
+    width: 100%;
+    .characteristics-title {
+      font-size: 15px;
+      display: block;
+    }
+    .attribute {
+      display: block;
+      spam {
+        display: inline-block;
+      }
+    }
+    .fa-heart, .fa-gem{
+      color: $ruby-color;
+    }
+    svg.svg-inline--fa {
+      font-size: 18px;
+      margin: 15px 10px 0 0;
+      width: 15px;
+    }
+    .fa-running {
+      color: #f24e50
+    }
+    .fa-smile-wink {
+      color: #f7c109
+    }
+    .fa-book {
+      color: #616AF5
+    }
+    .fa-dumbbell {
+      color: #60BF2A
+    }
+    .fa-heartbeat {
+      color: #f24e51
+    }
+  }
+}
+
 #viewMerchantModal {
   .fa-gem{
     color: $ruby-color;
