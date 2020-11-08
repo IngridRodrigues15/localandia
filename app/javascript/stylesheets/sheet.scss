@@ -3,10 +3,12 @@
   .character-info {
       display: block;
       .character-icon {
-        background-color: $icon-background;
         border-radius: 100%;
-        height: 80px;
-        width: 80px;
+        height: 150px;
+        width: 150px;
+        img {
+          width: 100%;
+        }
         svg {
             color: $icon-color;
             fill: currentColor;

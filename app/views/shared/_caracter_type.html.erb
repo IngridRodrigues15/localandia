@@ -1,0 +1,33 @@
+<% if svg %>
+  <% if character_type.name == "Maga"  %>
+    <div class="wizard-image class-image">
+      <div class="priest-image class-icon"><%= svg_icon 'wizard' %></div>
+    </div>
+  <% elsif character_type.name == "Sacerdotisa" %>
+     <div class="priest-image class-icon"><%= svg_icon 'magic-book' %></div>
+  <% elsif character_type.name == "Arqueira" %>
+    <div class="archer-image class-icon"><%= svg_icon 'bow' %></div>
+  <% elsif character_type.name == "Espadachim" %>
+  <div class="swordsman-image class-icon"><%= svg_icon 'sword' %></div>
+  <% end %>
+<% else %>
+  <% if character_type.name == "Maga"  %>
+    <div class="wizard-image class-image">
+      <div class="priest-image class-image">
+        <%= image_tag('maga.png') %>
+      </div>
+    </div>
+  <% elsif character_type.name == "Sacerdotisa" %>
+     <div class="priest-image class-image">
+       <%= image_tag('sacerdotisa.png') %>
+     </div>
+  <% elsif character_type.name == "Arqueira" %>
+    <div class="archer-image class-image">
+      <%= image_tag('arqueira.png') %>
+    </div>
+  <% elsif character_type.name == "Espadachim" %>
+    <div class="swordsman-image class-image">
+      <%= image_tag('espadachim.png') %>
+    </div>
+  <% end %>
+<% end %>

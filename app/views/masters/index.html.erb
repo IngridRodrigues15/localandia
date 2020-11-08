@@ -24,15 +24,8 @@
         <div class="card">
           <div class="card-body">
             <div class="character-icon">
-              <% if character.sheet.character_type.name == "Maga"  %>
-                <div class="wizard-image class-image"><%= svg_icon 'wizard' %></div>
-              <% elsif character.sheet.character_type.name == "Sacerdotisa" %>
-                 <div class="priest-image class-image"><%= svg_icon 'magic-book' %></div>
-              <% elsif character.sheet.character_type.name == "Arqueira" %>
-                <div class="archer-image class-image"><%= svg_icon 'bow' %></div>
-              <% elsif character.sheet.character_type.name == "Espadachim" %>
-              <div class="swordsman-image class-image"><%= svg_icon 'sword' %></div>
-              <% end %>
+              <%= render :partial => 'shared/caracter_type',
+                  :locals => {:svg => true, :character_type => character.sheet.character_type } %>
             </div>
             <div class="character-class">
               <p class="card-title"><%= character.nome %></p>

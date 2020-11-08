@@ -69,6 +69,17 @@
     font-size: 17px;
     display: inline-block;
   }
+  .class-icon {
+    color: $icon-color;
+    display: inline-block;
+    float: right;
+    svg {
+      width: 40px;
+      height: 40px;
+      color: $icon-color;
+      fill: currentColor;
+    }
+  }
   .class-image {
     color: $icon-color;
     display: inline-block;
