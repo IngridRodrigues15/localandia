@@ -33,7 +33,7 @@ class SheetsController < ApplicationController
     @sheet = Sheet.find_by(id: params[:id])
     @sheet_characteristics = @sheet.sheet_characteristics
     @itens = Item.where(kind: "Mercador")
-    @characters_in_game = Character.where(game: @character.game)
+    @characters_in_game = Character.where(game: @character.game).where.not(id: @character.id)
   end
 
   def characteristics_form
