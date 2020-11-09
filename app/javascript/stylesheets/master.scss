@@ -137,3 +137,43 @@
     }
   }
 }
+
+.all-player-container {
+  h5 {
+    text-align: center;
+    color: $purple;
+
+  }
+  .btn.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+  .character-info {
+    margin: 30px 0;
+  }
+  .card-title {
+    font-weight: 700;
+    font-size: 17px;
+    max-width: 115px;
+    overflow: hidden;
+    max-height: 30px;
+    display: inline-block;
+  }
+  .card-subtitle {
+    font-size: 14px;
+    color: $card-subtitle-color;
+  }
+  .character-icon {
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    float: right;
+    svg {
+        color: $icon-color;
+        fill: currentColor;
+        margin: 10px 0 10px 10px;
+        width: 25px;
+        height: 25px;
+    }
+  }
+}

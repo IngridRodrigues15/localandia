@@ -109,5 +109,38 @@
     <% end %>
   </div>
 
+  <div class="row all-player-container">
+    <div class="col-12">
+      <h5>Jogadoras de outras guildas </h5>
+      <hr/>
+    </div>
+    <% @all_characters.each do |player| %>
+      <% next if  player.nil? ||
+                  player.sheet.nil? ||
+                  player.sheet.character_type.nil? %>
+      <div class="col-md-3 col-sm-12 character-info">
+        <div class="card">
+          <div class="card-body">
+            <div class="character-icon">
+              <%= render :partial => 'shared/caracter_type',
+                  :locals => {:svg => true, :character_type => player.sheet.character_type } %>
+            </div>
+            <div class="character-class">
+              <p class="card-title"><%= player.nome %></p>
+              <p class="card-subtitle"><%= player.sheet.character_type.name %></p>
+              <p class="card-subtitle">Sala: <%= player.game.description %></p>
+            </div>
+          </div>
+          <div class="card-footer d-flex justify-content-around">
+            <%= form_with(url: masters_add_player_in_game_path) do |f| %>
+                <%= f.hidden_field :player_id, value: player.id %>
+                <%= f.submit "Trazer para minha sala", class: "btn btn-secondary" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
   <%= render 'shared/itens_merchant' %>
 </div>
