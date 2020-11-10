@@ -14,8 +14,7 @@ class SheetsController < ApplicationController
     @sheet.rubies = 150
     @sheet.heroic_points = 0
 
-    if caracter_type_valid?(sheet_params) &&
-      @sheet.save &&
+    if @sheet.save &&
       link_sheet_to_caracter(@sheet) &&
       initial_itens(@sheet) &&
       initial_weapons(@sheet)
