@@ -6,7 +6,7 @@ class MastersController < ApplicationController
     @characters = Character.where(game_id: @master.try(:game).try(:id))
     @itens = Item.where(kind: "Mercador")
 
-    @all_characters = Character.where.not(game_id: @master.try(:game).try(:id))
+    @all_characters = Character.where(active: true).where.not(game_id: @master.try(:game).try(:id))
   end
 
   def add_player_in_game
